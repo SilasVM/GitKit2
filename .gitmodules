@@ -1,0 +1,3 @@
+[submodule "FarmData2-main"]
+	path = projects/FarmData2/branches/main
+	url = https://github.com/DickinsonCollege/FarmData2.git
