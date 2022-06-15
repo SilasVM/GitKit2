@@ -1,25 +1,22 @@
 #!/bin/bash
 
+## This script is called once after the instance is cloned by a KitClient.
+## It runs in the clone of the instance in a KitClient.
+
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH-SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
+
+source "${SCRIPT_DIR}/upstream-location.sh"
 
 function main() {
     detect-upstream-clone
 }
 
 function detect-upstream-clone() {
-    upstream="$(get-upstream-location)"
+    upstream="$(load-upstream-location)"
     origin="$(get-origin-location)"
     if [[ "$origin" == "$upstream" ]] ; then
         display-error-message
     fi
-}
-
-function get-upstream-location() {
-    cat "$(get-upstream-location-file)"
-}
-
-function get-upstream-location-file() {
-        echo "$SCRIPT_DIR/upstream-location.txt"
 }
 
 function get-origin-lcoation() {

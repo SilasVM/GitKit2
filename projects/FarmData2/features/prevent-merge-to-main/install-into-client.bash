@@ -6,5 +6,5 @@
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH-SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 PROJECT_DIR="$(git rev-parse --show-toplevel)"
 
-cat "$SCRIPT_DIR/../prevent-rebase.bash" >> "$PROJECT_DIR/.git/hooks/pre-rebase"
-chmod +x "$PROJECT_DIR/.git/hooks/pre-rebase"
+cp "$SCRIPT_DIR/prevent-merge-to-main.bash" "$PROJECT_DIR/.git/hooks/pre-merge-commit"
+chmod +x "$PROJECT_DIR/.git/hooks/pre-merge-commit"

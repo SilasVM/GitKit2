@@ -1,12 +1,13 @@
 #!/bin/bash
 
+## This script is called after the new instance has been created and
+## initialiazed. It runs in the local clone of the instance.
+
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
-function main() {
-    save-upstream-location-in-instance
-}
+source "${SCRIPT_DIR}/upstream-location.sh"
 
-function save-upstream-location-in-instance() {
+function main() {
     save-upstream-location "$(get-upstream-location)"
 }
 
@@ -55,15 +56,6 @@ function remove-suffix-dot-git() {
 
 function remove-prefix-http() {
     echo "${"${url#*//}"#*/}"
-}
-
-function save-upstream-location() {
-    write-upstream-location "$1"
-    commit-and-push-upstream-location
-}
-
-function write-upstream-location() {
-    echo "$1" > "$(get-upstream-location-file)"
 }
 
 function get-upstream-location-file() {

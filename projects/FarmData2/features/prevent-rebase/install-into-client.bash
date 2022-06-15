@@ -4,5 +4,7 @@
 ## It runs in the clone of the instance in a KitClient.
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH-SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
+PROJECT_DIR="$(git rev-parse --show-toplevel)"
 
-"$SCRIPT_DIR/allow-only-fast-forward-merges-on-main.bash"
+cp "$SCRIPT_DIR/prevent-rebase.bash" "$PROJECT_DIR/.git/hooks/pre-rebase"
+chmod +x "$PROJECT_DIR/.git/hooks/pre-rebase"

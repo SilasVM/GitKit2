@@ -1,5 +1,0 @@
-url: https://github.com/DickinsonCollege/FarmData2.git
-branches:
-  main:
-    commit: d622e8d6d71e27890c73e2428e6dcf9d44ca606e
-    default: true
