@@ -1,12 +1,14 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+set -e
+
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
-export TARGET_URL="${1}"
+export TARGET_ORG="${1}"
 export PROJ_DIR="${SCRIPT_DIR}"
 export REPO_DIR="${SCRIPT_DIR}/repository"
 export GIT_DIR="${SCRIPT_DIR}/repository/.git"
 export KIT_DIR="${SCRIPT_DIR}/repository/.kit"
-export GIT="git --git-dir \"${GIT_DIR}\""
 
 deploy() {
     clone
@@ -15,37 +17,35 @@ deploy() {
     push
 }
 
-clone() {
-    exit-without-error-if-repository-exists
-    clone-url https://github.com/DickinsonCollege/FarmData2.git
-    reset-branch-to-commit main d622e8d6d71e27890c73e2428e6dcf9d44ca606e
-    remove-origin-remote
-}
+clone() (
+    mkdir -p "${REPO_DIR}"
+    cd "${REPO_DIR}"
+    git clone https://github.com/DickinsonCollege/FarmData2.git .
 
-exit-without-error-if-repository-exists() {
-    if [[ -d "${GIT_DIR}" ]] ; then
-        exit 0
-    fi
-}
+    # We must checkout each branch we want to keep.
+    # We should pin them to a known commit so the kit is repeatable.
+    git switch main
+    git reset --hard d622e8d6d71e27890c73e2428e6dcf9d44ca606e
+    git remote remove origin
 
-clone-url() {
-    git clone "$1" "${REPO_DIR}"
-}
+    # To speed up push and clones, we squash commits since the first.
+    git reset --soft $(git rev-list --max-parents=0 HEAD)
+    git add .
+    git config user.email "kit@example.com"
+    git config user.name "kit"
+    git commit -m "chore(kit): squash history"
+    git gc
+    git status
+)
 
-reset-branch-to-commit() {
-    ${GIT} switch "$1"
-    ${GIT} reset --hard "$2"
-}
-
-remove-origin-remote() {
-    ${GIT} remote remove origin
-}
-
-create-remote() {
-    local org="$(get-org-name "${TARGET_URL}")"
+create-remote() (
+    cd "${REPO_DIR}"
+    local org="$(get-org-name "${TARGET_ORG}")"
     local proj="$(get-project-name)"
-    gh repo create "${org}/${KIT_PROJECT_PREFIX}${proj}"  --source "${REPO_DIR}" --public
-}
+    echo $KIT_GITHUB_TOKEN | gh auth login --with-token
+    gh repo create "${org}/${KIT_PROJECT_PREFIX}${proj}" --public
+    git remote add origin "https://${KIT_GITHUB_TOKEN}@github.com/${org}/${KIT_PROJECT_PREFIX}${proj}"
+)
 
 get-org-name() {
     local n="$1"
@@ -58,16 +58,28 @@ get-project-name() {
     basename "${PROJ_DIR}"
 }
 
-install-features() {
-    mkidr -p "${KIT_DIR}"
+install-features() (
+    mkdir -p "${KIT_DIR}"
     cp -R "${PROJ_DIR}"/features "${KIT_DIR}"
-    for f in "${KIT_DIR}"/features/* ; do
-        "${f}"/install-into-instance.sh
-    done
-    ${GIT} add .
-    ${GIT} commit -m "build(kit): install features"
-}
 
-push() {
-    ${GIT} push --all --tags
-}
+    for f in "${KIT_DIR}"/features/* ; do
+    (
+        cd "${f}"
+        test ! -e ./install-into-instance.sh || ./install-into-instance.sh
+    )
+    done
+
+    (
+        cd "${REPO_DIR}"
+        git add .
+        git commit -m "build(kit): install features"
+    )
+)
+
+push() (
+    cd "${REPO_DIR}"
+    git push --all
+    git push --tags
+)
+
+deploy

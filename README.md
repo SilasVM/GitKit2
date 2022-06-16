@@ -1,3 +1,3 @@
 # GitKit-Refactor
 
-Experimental reorganization of GitKit
+Experimental refactoring of GitKit.

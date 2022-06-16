@@ -5,6 +5,14 @@
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
-workflows_dir="$(git rev-parse --show-toplevel)/.github/workflows"
+set -e
+
+project_dir="$(
+    while [[ ! -d .git ]] ; do
+        cd ..
+    done
+    pwd
+)"
+workflows_dir="${project_dir}/.github/workflows"
 mkdir -p "$workflows_dir"
-cp "$SCRIPT_DIR/allow-anyone-to-self-assign.yaml" "$workflows_dir"
+cp "$SCRIPT_DIR/allow-anyone-to-self-assign-an-issue.yaml" "$workflows_dir"

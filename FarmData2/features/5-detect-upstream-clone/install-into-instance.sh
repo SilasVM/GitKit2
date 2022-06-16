@@ -15,7 +15,7 @@ function get-upstream-location() {
     get-origin-location
 }
 
-function get-origin-lcoation() {
+function get-origin-location() {
     convert-url-to-org-repo "$(get-origin-url)"
 }
 
@@ -24,38 +24,17 @@ function get-origin-url() {
 }
 
 function convert-url-to-org-repo() {
-    url="$1"
-    if [[ "$url" =~ ^git.* ]] ; then
-        convert-git-url-to-org-repo "$url"
+    local n="$1"
+    if [[ "$n" =~ ^git.* ]] ; then
+        # remove git@github.com prefix
+        n="${n#git@github.com:}"
     else
-        convert-http-url-to-org-repo "$url"
+        # remove https://github.com/ prefix
+        n="${n#https://github.com/}"
     fi
-}
-
-function convert-git-url-to-org-repo() {
-    url="$1"
-    url="$(remove-prefix-to-first-colon "$url")"
-    url="$(remove-suffix-dot-git "$url")"
-    echo "$url"
-}
-
-function convert-http-url-to-org-repo() {
-    url="$1"
-    url="$(remove-prefix-http "$url")"
-    url="$(remove-suffix-dot-git "$url")"
-    echo "$url"
-}
-
-function remove-prefix-to-first-colon() {
-    echo "${1#*:}"
-}
-
-function remove-suffix-dot-git() {
-    echo "${1%.git}"
-}
-
-function remove-prefix-http() {
-    echo "${"${url#*//}"#*/}"
+    # remove .git suffix
+    n="${n%.git}"
+    echo "$n"
 }
 
 function get-upstream-location-file() {
