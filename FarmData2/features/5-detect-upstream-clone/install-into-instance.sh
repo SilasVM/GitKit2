@@ -30,7 +30,7 @@ function convert-url-to-org-repo() {
         n="${n#git@github.com:}"
     else
         # remove https://github.com/ prefix
-        n="${n#https://github.com/}"
+        n="${n#https://*github.com/}"
     fi
     # remove .git suffix
     n="${n%.git}"
