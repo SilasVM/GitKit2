@@ -13,5 +13,5 @@ Experimental refactoring of GitKit.
    and `<org>` with the GitHub organization (or username) to deploy into.
 
       ```bash
-      docker run --rm -it -e GH_TOKEN=<token> ghrc.io/hfossedu/gitkit-deploy <org>
+      docker run --rm -it -e GH_TOKEN=<token> ghcr.io/hfossedu/gitkit-deploy <org>
       ```
