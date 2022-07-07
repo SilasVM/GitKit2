@@ -57,8 +57,8 @@ jobs:
         uses: docker/build-push-action@v3
         if: steps.semantic.outputs.new-release-published == 'true'
         with:
-          context: ./src
-          file: ./src/Dockerfile
+          context: ./
+          file: ./gitkit-deploy.dockerfile
           push: true
           tags: |
             ghcr.io/hfossedu/gitkit-deploy:${{ steps.semantic.outputs.release-version }}
