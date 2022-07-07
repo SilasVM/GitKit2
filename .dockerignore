@@ -1,0 +1,9 @@
+# Ignore everything...
+*
+
+# Except...
+!/FarmData2
+!deploy.sh
+
+# But ignore these too...
+**/repository/

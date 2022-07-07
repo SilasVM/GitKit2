@@ -8,8 +8,6 @@ cd "$SCRIPT_DIR"
 
 set -e
 
-echo $KIT_GITHUB_TOKEN | gh auth login --with-token
-
 cat labels.json | yq '.[].color' > colors.txt
 cat labels.json | yq '.[].name' > names.txt
 paste names.txt colors.txt > names-colors.txt

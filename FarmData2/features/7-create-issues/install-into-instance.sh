@@ -8,8 +8,6 @@ cd "$SCRIPT_DIR"
 
 set -e
 
-echo $KIT_GITHUB_TOKEN | gh auth login --with-token
-
 i=0
 o="$(cat issues.json | yq ".[${i}]")"
 

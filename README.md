@@ -2,20 +2,16 @@
 
 Experimental refactoring of GitKit.
 
-
----
-
 ## Deploy
-
-To deploy an instance of this kit...
 
 1. On GitHub, create a personal access token with the following scopes
    * repo (all)
    * read:org
    * workflow
-2. Store this token in an environment variable named KIT_GITHUB_TOKEN.
-3. Run `deploy.sh`
 
+2. Run the following replacing `<token>` with the token you just created,
+   and `<org>` with the GitHub organization (or username) to deploy into.
 
-
-This script uses gh (GitHub's cli) to create a project
+      ```bash
+      docker run --rm -it -e GH_TOKEN=<token> ghrc.io/hfossedu/gitkit-deploy <org>
+      ```
