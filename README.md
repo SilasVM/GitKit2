@@ -6,16 +6,16 @@ The FarmData2 GitKit repository is a disconnected fork of [FarmData2](https://gi
 
 There is a sequence of 4 activities that cover the following topics:
 
-1. Community and Collaboration: [[Slides](./materials/1-S-CommunityAndCollaboration.pptx) | [Activity](./materials/1-A-CommunityAndCollaboration.docx)]
+1. Community and Collaboration: [[Slides](./materials/slides/1-S-CommunityAndCollaboration.pptx) | [Activity](./materials/activities/1-A-CommunityAndCollaboration.docx)]
    * An introduction to FOSS communities, how they collaborate using version control (e.g. git) and repository hosting (e.g. GitHub).
    * Includes practice with the issue tracker, forking and cloning.
-2. Working Local & Upstreaming [[Slides](./materials/2-S-WorkingLocallyAndUpstreaming.pptx) | [Activity](./materials/2-A-WorkiongLocallyAndUpstreaming.docx)]
+2. Working Local & Upstreaming [[Slides](./materials/slides/2-S-WorkingLocallyAndUpstreaming.pptx) | [Activity](./materials/activities/2-A-WorkiongLocallyAndUpstreaming.docx)]
    * Introduces feature branches, commits and pull requests as part of a basic branching workflow.
    * Includes practice with creating and switching branches, staging and committing changes, pushing to origin and submitting pull requests.
-3. Staying Synchronized [[Slides](./materials/3-S-StayingSynchronized.pptx) | [Activity](./materials/3-A-StayingSynchronized.docx)]
+3. Staying Synchronized [[Slides](./materials/slides/3-S-StayingSynchronized.pptx) | [Activity](./materials/activities/3-A-StayingSynchronized.docx)]
    * Looks at how asynchronous collaboration results in local repository being out of synch with the upstream and how to resolve this by pulling automatically merged changes.
    * Includes having code merged into upstream main, practice with setting the upstream remote, pulling changes from upstream main, pushing to origin, deleting feature branches.
-4. Merge Conflicts [[Slides](./materials/4-S-MergeConflicts.pptx) | [Activity](./materials/4-A-MergeConflicts.docx)]
+4. Merge Conflicts [[Slides](./materials/slides/4-S-MergeConflicts.pptx) | [Activity](./materials/activities/4-A-MergeConflicts.docx)]
    * Introduces conflicting changes, how they lead to merge conflicts, how they can be resolved.
    * Includes practice with merging main into a feature branch, merge conflict representation, using a merge tool and updating a pull request.
 
