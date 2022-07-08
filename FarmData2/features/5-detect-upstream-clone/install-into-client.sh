@@ -15,9 +15,9 @@ function detect-upstream-clone() {
     upstream="$(load-upstream-location)"
     origin="$(get-origin-location)"
 
-    echo "CHECKING UPSTREAM CLONE"
-    echo "upstream=$upstream"
-    echo "origin=$origin"
+    # Case insensitive check.
+    upstream="$(echo "$upstream" | tr '[:upper:]' '[:lower:]')"
+    origin="$(echo "$origin" | tr '[:upper:]' '[:lower:]')"
     if [[ "$origin" == "$upstream" ]] ; then
         display-error-message
     fi
