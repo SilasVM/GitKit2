@@ -62,3 +62,14 @@ It has also been effective to wait to merged the `addRound2Conflicts` branch at 
 In this activity students synchronize with the upstream to get the conflicting changes that were merged by the `addRound2Conflicts` branch. They then merge those changes into their feature branch creating a conflict.  They use a merge tool to resolve the conflict and then push the changes to their origin to update their pull request.  Their goal is to have their pull requests updated so that they again are able to be merged automatically.  There is ultimately no need to merge these pull requests.
 
 Inevitably some students will be behind on their work and will complete their sync with upstream after you have merged the `addRound2Conflicts` branch.  In these cases, their pull requests will not create a conflict to be resolved.  These students should pull the `mergeConflictPractice` branch and create a pull request for it.  That branch contains conflicts with those introduced in the `addRound2Conflicts` branch.  So they can then complete the activity using the `mergeConflictPractice` branch as it it were their original feature branch. Students not in this situation, but who would like additional practice can also pull and use the `mergeConflictPractice` branch.
+
+## Acknowledgments
+
+This kit was designed and developed by several people.
+
+* [Grant Braught](https://www.dickinson.edu/site/custom_scripts/dc_faculty_profile_index.php?fac=braught)
+* [Karl Wurst](http://cs.worcester.edu/kwurst/)
+* ["Stoney" Jackson](https://www1.wne.edu/arts-and-sciences/faculty.cfm?uid=203)
+* [Clif Kussmaul](https://kussmaul.org/)
+* [Cam MacDonnald](https://www.macewan.ca/academics/academic-departments/computer-science/academics/capstone-projects/profile/?profileid=macdonellc4)
+
