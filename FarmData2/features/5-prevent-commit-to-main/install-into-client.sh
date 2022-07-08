@@ -6,5 +6,5 @@
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 PROJECT_DIR="$(git rev-parse --show-toplevel)"
 
-cp "$SCRIPT_DIR/prevent-commit-to-main.sh" "$PROJECT_DIR/.git/hooks/post-checkout"
-chmod +x "$PROJECT_DIR/.git/hooks/post-checkout"
+cp "$SCRIPT_DIR/prevent-commit-to-main.sh" "$PROJECT_DIR/.git/hooks/pre-commit"
+chmod +x "$PROJECT_DIR/.git/hooks/pre-commit"

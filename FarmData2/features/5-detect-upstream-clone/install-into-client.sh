@@ -14,6 +14,10 @@ function main() {
 function detect-upstream-clone() {
     upstream="$(load-upstream-location)"
     origin="$(get-origin-location)"
+
+    echo "CHECKING UPSTREAM CLONE"
+    echo "upstream=$upstream"
+    echo "origin=$origin"
     if [[ "$origin" == "$upstream" ]] ; then
         display-error-message
     fi
