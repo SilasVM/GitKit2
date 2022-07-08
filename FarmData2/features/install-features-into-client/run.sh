@@ -13,8 +13,10 @@ done
 
 ## Install features into the client.
 for feature in ./.kit/features/* ; do
+    pwd
     script="$feature"/install-into-client.sh
     if [[ -e "$script" ]] ; then
+        echo "$scipt"
         "$script"
     fi
 done

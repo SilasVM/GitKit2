@@ -5,6 +5,8 @@
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH-SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
+echo "$SCRIPT_DIR=$SCRIPT_DIR"
+
 source "${SCRIPT_DIR}/upstream-location.sh"
 
 function main() {
