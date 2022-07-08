@@ -6,8 +6,6 @@ The FarmData2 GitKit repository is a disconnected fork of [FarmData2](https://gi
 
 There is a sequence of 4 activities that cover the following topics:
 
-https://github.com/HFOSSedu/GitKit-Refactor/blob/main/materials/slides/2-S-WorkingLocallyAndUpstreaming.pptx?raw=true
-
 1. Community and Collaboration: [[Slides](./materials/slides/1-S-CommunityAndCollaboration.pptx?raw=true) | [Activity](./materials/activities/1-A-CommunityAndCollaboration.docx?raw=true)]
    * An introduction to FOSS communities, how they collaborate using version control (e.g. git) and repository hosting (e.g. GitHub).
    * Includes practice with the issue tracker, forking and cloning.
