@@ -19,7 +19,7 @@ function detect-upstream-clone() {
     fi
 }
 
-function get-origin-lcoation() {
+function get-origin-location() {
     convert-url-to-org-repo "$(get-origin-url)"
 }
 
@@ -59,7 +59,9 @@ function remove-suffix-dot-git() {
 }
 
 function remove-prefix-http() {
-    echo "${"${url#*//}"#*/}"
+    local url="${1}"
+    url="${url#*//}"
+    echo "${url#*/}"
 }
 
 function display-error-message() {
