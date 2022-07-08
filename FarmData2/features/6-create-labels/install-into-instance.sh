@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 ## This script is called after the new instance has been created and
 ## initialiazed. It runs in the local clone of the instance.
