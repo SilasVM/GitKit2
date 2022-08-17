@@ -5,7 +5,7 @@
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
-# shellcheck source=somefile
+# shellcheck source=upstream-location.sh
 source "${SCRIPT_DIR}/upstream-location.sh"
 
 function main() {
