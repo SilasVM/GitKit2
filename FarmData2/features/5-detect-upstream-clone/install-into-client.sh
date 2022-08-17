@@ -5,7 +5,7 @@
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
-# shellcheck source=FarmData2/features/5-detect-upstream-clone/upstream-location.sh
+# source-path=SCRIPTDIR
 source "${SCRIPT_DIR}/upstream-location.sh"
 
 function main() {
