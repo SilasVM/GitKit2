@@ -5,7 +5,7 @@
 
 # Disallow all rebasing
 echo "**********************************************************************"
-printf "\xF0\x9F\x98\xBA Meow, Kitty here...\n"
+printf "\xF0\x9F\x98\xBA\xF0\x9F\x92\xBB Meow, Kit-tty here!\n"
 echo "You should not be rebasing in this kit."
 echo "You should be using 'git merge' instead."
 echo "**********************************************************************"
