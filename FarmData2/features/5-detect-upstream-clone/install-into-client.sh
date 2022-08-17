@@ -5,6 +5,7 @@
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
+# shellcheck disable=SC1091
 source "${SCRIPT_DIR}/upstream-location.sh"
 
 function main() {
@@ -70,7 +71,7 @@ function remove-prefix-http() {
 
 function display-error-message() {
     echo "*********************************************************************"
-    printf "\xF0\x9F\x98\xBA Meow, Kitty here!\n"
+    printf "\xF0\x9F\x98\xBA\xF0\x9F\x92\xBB Meow, Kit-tty here!\n"
     echo
     echo "Oops, I think you have cloned the upstream repository instead of your"
     echo "fork. But don't worry. You can fix it!"
