@@ -30,7 +30,7 @@ clone() {
         git remote remove origin
 
         # To speed up push and clones, we squash commits since the first.
-        git reset --soft $(git rev-list --max-parents=0 HEAD)
+        git reset --soft $(git rev-list --max-parents=0 --first-parent HEAD)
         git add .
         git config user.email "kit@example.com"
         git config user.name "kit"
