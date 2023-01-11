@@ -1,5 +1,11 @@
 FarmData2/repository
 
+# Meld intermediate merge files
+*_BACKUP_*
+*_BASE_*
+*_LOCAL_*
+*_REMOTE_*
+
 # Windows thumbnail cache files
 Thumbs.db
 Thumbs.db:encryptable
