@@ -1,4 +1,9 @@
+#!/usr/bin/env bash
+
+# shellcheck disable=SC2016
 cat <<'EOF'
+#!/usr/bin/env bash
+
 GIT_COMMAND="$(which git)"
 export GIT_COMMAND
 
