@@ -2,11 +2,12 @@
 
 echo "*********************************************************************"
 printf "\xF0\x9F\x98\xBA\xF0\x9F\x92\xBB Meow, Kit-tty here!\n"
-printf "(I'm in the 'kit' and communicate through your 'tty'\xC2\xB9 - get it? \xF0\x9F\x98\x81)\n"
 echo
-echo "I am here to help you be successful in the GitKit activities."
-echo "You will hear from me every once in a while when I think you"
-echo "might need some help."
+echo "I am your personal virtual assistant, and I am here to help you be"
+echo "successful in the GitKit activities. You will hear from me every"
+echo "once in a while when I think you might need some help."
 echo
-printf "\xC2\xB9To learn about the tty: https://itsfoss.com/what-is-tty-in-linux/\n"
+echo "(About my name:"
+printf "I'm in the 'kit' and communicate through your 'tty' - get it? \xF0\x9F\x98\x81\n"
+printf "Curious about the tty? See https://itsfoss.com/what-is-tty-in-linux/)\n"
 echo "*********************************************************************"
