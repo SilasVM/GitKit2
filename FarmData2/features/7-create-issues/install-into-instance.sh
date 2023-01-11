@@ -16,7 +16,7 @@ while [[ "$o" != "null" ]] ; do
     body="$(echo "$o" | yq '.body')"
     labels="$(echo "$o" | yq '.labels[]' | sed ':a;N;$!ba;s/\n/,/g')"
     echo "Creating issue: $title"
-    gh issue create --title "$title" --body "$body" --label "$lables"
+    gh issue create --title "$title" --body "$body" --label "$labels"
     sleep 3
     ((++i))
     o="$(cat issues.json | yq ".[${i}]")"
