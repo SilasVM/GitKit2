@@ -11,7 +11,11 @@ export GIT_DIR="${SCRIPT_DIR}/repository/.git"
 export KIT_DIR="${SCRIPT_DIR}/repository/.kit"
 
 deploy() {
-    clone
+    clone https://github.com/DickinsonCollege/FarmData2.git
+    identify-as "kit" "kit@example.com"
+    remove-remote origin
+    switch-to main
+    reset-to-commit d622e8d6d71e27890c73e2428e6dcf9d44ca606e
     create-remote
     install-features
     commit
@@ -22,13 +26,33 @@ clone() {
     (
         mkdir -p "${REPO_DIR}"
         cd "${REPO_DIR}"
-        git clone https://github.com/DickinsonCollege/FarmData2.git .
+        git clone "$1" .
+    )
+}
 
-        # We must checkout each branch we want to keep.
-        # We reset to a specific commit so the kit is repeatable.
-        git switch main
-        git reset --hard d622e8d6d71e27890c73e2428e6dcf9d44ca606e
-        git remote remove origin
+identify-as() {
+    (
+        cd "${REPO_DIR}"
+        git config user.email "$2"
+        git config user.name "$1"
+    )
+}
+
+remove-remote() {
+    git remote remove "$1"
+}
+
+switch-to() {
+    (
+        cd "${REPO_DIR}"
+        git switch "$1"
+    )
+}
+
+reset-to-commit() {
+    (
+        cd "${REPO_DIR}"
+        git reset --hard "$1"
     )
 }
 
@@ -71,8 +95,6 @@ commit() {
     (
         cd "${REPO_DIR}"
         git add .
-        git config user.email "kit@example.com"
-        git config user.name "kit"
         git commit -m "chore(kit): deploy"
     )
 }
