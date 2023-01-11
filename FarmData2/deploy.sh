@@ -14,6 +14,7 @@ deploy() {
     clone
     create-remote
     install-features
+    commit
     push
 }
 
@@ -24,17 +25,10 @@ clone() {
         git clone https://github.com/DickinsonCollege/FarmData2.git .
 
         # We must checkout each branch we want to keep.
-        # We should pin them to a known commit so the kit is repeatable.
+        # We reset to a specific commit so the kit is repeatable.
         git switch main
         git reset --hard d622e8d6d71e27890c73e2428e6dcf9d44ca606e
         git remote remove origin
-
-        # To speed up push and clones, we squash commits since the first.
-        git reset --soft $(git rev-list --max-parents=0 --first-parent HEAD)
-        git add .
-        git config user.email "kit@example.com"
-        git config user.name "kit"
-        git commit -m "chore(kit): squash history"
     )
 }
 
@@ -70,12 +64,16 @@ install-features() {
             test ! -e ./install-into-instance.sh || ./install-into-instance.sh
         )
         done
+    )
+}
 
-        (
-            cd "${REPO_DIR}"
-            git add .
-            git commit -m "build(kit): install features"
-        )
+commit() {
+    (
+        cd "${REPO_DIR}"
+        git add .
+        git config user.email "kit@example.com"
+        git config user.name "kit"
+        git commit -m "chore(kit): deploy"
     )
 }
 
