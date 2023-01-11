@@ -59,15 +59,18 @@ reset-to-commit() {
 create-remote() {
     (
         cd "${REPO_DIR}"
-        local org="$(get-org-name "${TARGET_ORG}")"
-        local proj="$(get-project-name)"
+        local org
+        org="$(get-org-name "${TARGET_ORG}")"
+        local proj
+        proj="$(get-project-name)"
         gh repo create "${org}/${KIT_PROJECT_PREFIX}${proj}" --public
         git remote add origin "https://${GH_TOKEN}@github.com/${org}/${KIT_PROJECT_PREFIX}${proj}"
     )
 }
 
 get-org-name() {
-    local n="$1"
+    local n
+    n="$1"
     n="${n##*github.com/}"
     n="${n%.git}"
     echo "$n"
