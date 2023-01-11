@@ -11,9 +11,14 @@ export GIT_DIR="${SCRIPT_DIR}/repository/.git"
 export KIT_DIR="${SCRIPT_DIR}/repository/.kit"
 
 deploy() {
-    clone
+    clone https://github.com/DickinsonCollege/FarmData2.git
+    identify-as "kit" "kit@example.com"
+    remove-remote origin
+    switch-to main
+    reset-to-commit d622e8d6d71e27890c73e2428e6dcf9d44ca606e
     create-remote
     install-features
+    commit
     push
 }
 
@@ -21,35 +26,51 @@ clone() {
     (
         mkdir -p "${REPO_DIR}"
         cd "${REPO_DIR}"
-        git clone https://github.com/DickinsonCollege/FarmData2.git .
+        git clone "$1" .
+    )
+}
 
-        # We must checkout each branch we want to keep.
-        # We should pin them to a known commit so the kit is repeatable.
-        git switch main
-        git reset --hard d622e8d6d71e27890c73e2428e6dcf9d44ca606e
-        git remote remove origin
+identify-as() {
+    (
+        cd "${REPO_DIR}"
+        git config user.email "$2"
+        git config user.name "$1"
+    )
+}
 
-        # To speed up push and clones, we squash commits since the first.
-        git reset --soft $(git rev-list --max-parents=0 --first-parent HEAD)
-        git add .
-        git config user.email "kit@example.com"
-        git config user.name "kit"
-        git commit -m "chore(kit): squash history"
+remove-remote() {
+    git remote remove "$1"
+}
+
+switch-to() {
+    (
+        cd "${REPO_DIR}"
+        git switch "$1"
+    )
+}
+
+reset-to-commit() {
+    (
+        cd "${REPO_DIR}"
+        git reset --hard "$1"
     )
 }
 
 create-remote() {
     (
         cd "${REPO_DIR}"
-        local org="$(get-org-name "${TARGET_ORG}")"
-        local proj="$(get-project-name)"
+        local org
+        org="$(get-org-name "${TARGET_ORG}")"
+        local proj
+        proj="$(get-project-name)"
         gh repo create "${org}/${KIT_PROJECT_PREFIX}${proj}" --public
         git remote add origin "https://${GH_TOKEN}@github.com/${org}/${KIT_PROJECT_PREFIX}${proj}"
     )
 }
 
 get-org-name() {
-    local n="$1"
+    local n
+    n="$1"
     n="${n##*github.com/}"
     n="${n%.git}"
     echo "$n"
@@ -70,12 +91,14 @@ install-features() {
             test ! -e ./install-into-instance.sh || ./install-into-instance.sh
         )
         done
+    )
+}
 
-        (
-            cd "${REPO_DIR}"
-            git add .
-            git commit -m "build(kit): install features"
-        )
+commit() {
+    (
+        cd "${REPO_DIR}"
+        git add .
+        git commit -m "chore(kit): deploy"
     )
 }
 
