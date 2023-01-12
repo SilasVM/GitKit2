@@ -21,6 +21,7 @@ function detect-upstream-clone() {
     origin="$(echo "$origin" | tr '[:upper:]' '[:lower:]')"
     if [[ "$origin" == "$upstream" ]] ; then
         display-error-message
+        exit 1
     fi
 }
 
