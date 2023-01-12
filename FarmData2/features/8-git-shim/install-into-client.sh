@@ -5,12 +5,30 @@
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
-PATH_TO_SUB_SHIMS="$SCRIPT_DIR/sub-shims"
+INSTALL_INTO_SHELL_TEMPLATE_SH="$SCRIPT_DIR/install-into-shell_template.sh"
+INSTALL_INTO_SHELL_SH="$SCRIPT_DIR/install-into-shell.sh"
+SUB_SHIMS_DIR="$SCRIPT_DIR/sub-shims"
+BASHRC="${HOME}/.bashrc"
 
-sed "s@replace-with-path-to-sub-shims@$PATH_TO_SUB_SHIMS@" "$SCRIPT_DIR/install-into-shell_template.sh" > "$SCRIPT_DIR/install-into-shell.sh"
-chmod +x "$SCRIPT_DIR/install-into-shell.sh"
+install() {
+    create-install-into-shell
+    update-bashrc
+    desplay-message
+}
 
-printf '# install git-shim\n' >> "${HOME}/.bashrc"
-printf '%s%s%s\n' 'eval "$(' "$SCRIPT_DIR/install-into-shell.sh" ')"'  >> "${HOME}/.bashrc"
+create-install-into-shell() {
+    sed "s@replace-with-path-to-sub-shims@$SUB_SHIMS_DIR@" "$INSTALL_INTO_SHELL_TEMPLATE_SH" > "$INSTALL_INTO_SHELL_SH"
+    chmod +x "$INSTALL_INTO_SHELL_SH"
+}
 
-bash --login
+update-bashrc() {
+    # shellcheck ignore=SC2016
+    printf '# install git-shim\n' >> "$BASHRC"
+    printf '%s%s%s\n' 'eval "$(' "$INSTALL_INTO_SHELL_SH" ')"'  >> "$BASHRC"
+}
+
+display-message() {
+    printf '\n\nIMPORTANT: Close this terminal and start a new terminal to continue.\n\n'
+}
+
+install
