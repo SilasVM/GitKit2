@@ -22,8 +22,8 @@ create-install-into-shell() {
 }
 
 update-bashrc() {
-    # shellcheck disable=SC2016
     printf '# install git-shim\n' >> "$BASHRC"
+    # shellcheck disable=SC2016
     printf '%s%s%s\n' 'eval "$(' "$INSTALL_INTO_SHELL_SH" ')"'  >> "$BASHRC"
 }
 
