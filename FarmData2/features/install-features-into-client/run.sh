@@ -18,3 +18,11 @@ for feature in ./.kit/features/* ; do
         "$script"
     fi
 done
+
+## Run post installs.
+for feature in ./.kit/features/* ; do
+    script="$feature"/post-install-into-client.sh
+    if [[ -e "$script" ]] ; then
+        "$script"
+    fi
+done

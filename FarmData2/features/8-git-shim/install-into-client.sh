@@ -11,26 +11,21 @@ SUB_SHIMS_DIR="$SCRIPT_DIR/sub-shims"
 BASHRC="${HOME}/.bashrc"
 
 install() {
-    generate-install-into-shell
-    update-bashrc
-    desplay-message
+    generate-install-script
+    call-install-script-from-bashrc
 }
 
-generate-install-into-shell() {
+generate-install-script() {
     # Embed the path to the sub-shims directory into the install-into-shell script.
     sed "s@replace-with-path-to-sub-shims@$SUB_SHIMS_DIR@" \
             "$INSTALL_INTO_SHELL_TEMPLATE_SH" > "$INSTALL_INTO_SHELL_SH"
     chmod +x "$INSTALL_INTO_SHELL_SH"
 }
 
-update-bashrc() {
+call-install-script-from-bashrc() {
     printf '# install git-shim\n' >> "$BASHRC"
     # shellcheck disable=SC2016
     printf '%s%s%s\n' 'eval "$(' "$INSTALL_INTO_SHELL_SH" ')"'  >> "$BASHRC"
-}
-
-display-message() {
-    printf '\n\nIMPORTANT: Close this terminal and start a new terminal to continue.\n\n'
 }
 
 install
