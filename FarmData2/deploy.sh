@@ -11,7 +11,7 @@ export GIT_DIR="${SCRIPT_DIR}/repository/.git"
 export KIT_DIR="${SCRIPT_DIR}/repository/.kit"
 
 
-TESTING=true
+TESTING=false
 export TESTING
 
 if [ ${TESTING} = "true" ] ; then
