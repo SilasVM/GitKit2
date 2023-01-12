@@ -11,13 +11,15 @@ SUB_SHIMS_DIR="$SCRIPT_DIR/sub-shims"
 BASHRC="${HOME}/.bashrc"
 
 install() {
-    create-install-into-shell
+    generate-install-into-shell
     update-bashrc
     desplay-message
 }
 
-create-install-into-shell() {
-    sed "s@replace-with-path-to-sub-shims@$SUB_SHIMS_DIR@" "$INSTALL_INTO_SHELL_TEMPLATE_SH" > "$INSTALL_INTO_SHELL_SH"
+generate-install-into-shell() {
+    # Embed the path to the sub-shims directory into the install-into-shell script.
+    sed "s@replace-with-path-to-sub-shims@$SUB_SHIMS_DIR@" \
+            "$INSTALL_INTO_SHELL_TEMPLATE_SH" > "$INSTALL_INTO_SHELL_SH"
     chmod +x "$INSTALL_INTO_SHELL_SH"
 }
 
