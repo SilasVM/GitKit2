@@ -19,7 +19,7 @@ if [ "${TESTING}" = "true" ] ; then
     TARGET_REPO=https://github.com/HFOSSedu/TestKit.git
     TARGET_COMMIT=b058258daac4a6934e73f5bee796444d1f8c0e21
     gh() {
-        if [ "$1"="repo" ] ; then
+        if [ "$1" = "repo" ] ; then
             "$(which gh)" "$@"
         fi
     }
