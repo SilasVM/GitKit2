@@ -71,5 +71,5 @@ This kit was designed and developed by several people.
 * [Karl Wurst](http://cs.worcester.edu/kwurst/)
 * ["Stoney" Jackson](https://www1.wne.edu/arts-and-sciences/faculty.cfm?uid=203)
 * [Clif Kussmaul](https://kussmaul.org/)
-* [Cam MacDonnald](https://www.macewan.ca/academics/academic-departments/computer-science/academics/capstone-projects/profile/?profileid=macdonellc4)
+* [Cam Macdonell](https://www.macewan.ca/academics/academic-departments/computer-science/academics/capstone-projects/profile/?profileid=macdonellc4)
 
