@@ -1,13 +1,51 @@
 #!/usr/bin/env bash
 
+# This file is installed into 8-git-shim/sub-shims.
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )"
 
+function convert-url-to-org-repo() {
+    url="$1"
+    if [[ "$url" =~ ^git.* ]] ; then
+        convert-git-url-to-org-repo "$url"
+    else
+        convert-http-url-to-org-repo "$url"
+    fi
+}
+
+function convert-git-url-to-org-repo() {
+    url="$1"
+    url="$(remove-prefix-to-first-colon "$url")"
+    url="$(remove-suffix-dot-git "$url")"
+    echo "$url"
+}
+
+function convert-http-url-to-org-repo() {
+    url="$1"
+    url="$(remove-prefix-http "$url")"
+    url="$(remove-suffix-dot-git "$url")"
+    echo "$url"
+}
+
+function remove-prefix-to-first-colon() {
+    echo "${1#*:}"
+}
+
+function remove-suffix-dot-git() {
+    echo "${1%.git}"
+}
+
+function remove-prefix-http() {
+    local url="${1}"
+    url="${url#*//}"
+    echo "${url#*/}"
+}
+
 if [ "$2" = "add" ] && [ "$3" = "upstream" ] ; then
-    # We know this exists. We put it there.
     # shellcheck disable=SC1091
-    source "$SCRIPT_DIR/../5-detect-upstream-clone/upstream-location.sh"
-    UPSTREAM_URL="$(load-upstream-location)"
-    if [ "$4" != "$UPSTREAM_URL" ] ; then
+    source "$SCRIPT_DIR/../../5-detect-upstream-clone/upstream-location.sh"
+    UPSTREAM_ORG_REPO="$(load-upstream-location)"
+    ORG_REPO="$(convert-url-to-org-repo "$4")"
+    if [ "$ORG_REPO" != "$UPSTREAM_ORG_REPO" ] ; then
         echo "*********************************************************************"
         printf "\xF0\x9F\x98\xBA\xF0\x9F\x92\xBB Meow, Kit-tty here!\n"
         echo
