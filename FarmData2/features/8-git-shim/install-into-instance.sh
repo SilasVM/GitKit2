@@ -5,4 +5,4 @@
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
-chmod +x "$SCRIPT_DIR/sub-shims/*"
+chmod +x "$SCRIPT_DIR/sub-shims/"*
