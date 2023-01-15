@@ -9,7 +9,7 @@ cd "$SCRIPT_DIR"
 set -e
 
 i=0
-o="$(cat issues.json | yq ".[${i}]")"
+o="$(yq ".[${i}]" < issues.json)"
 
 while [[ "$o" != "null" ]] ; do
     title="$(echo "$o" | yq '.title')"
@@ -19,5 +19,5 @@ while [[ "$o" != "null" ]] ; do
     gh issue create --title "$title" --body "$body" --label "$labels"
     sleep 3
     ((++i))
-    o="$(cat issues.json | yq ".[${i}]")"
+    o="$(yq ".[${i}]" < issues.json)"
 done

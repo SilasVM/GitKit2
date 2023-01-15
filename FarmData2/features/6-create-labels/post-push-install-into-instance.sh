@@ -8,12 +8,12 @@ cd "$SCRIPT_DIR"
 
 set -e
 
-cat labels.json | yq '.[].color' > colors.txt
-cat labels.json | yq '.[].name' > names.txt
+yq '.[].color' < labels.json > colors.txt
+yq '.[].name' < labels.json > names.txt
 paste names.txt colors.txt > names-colors.txt
 
 IFS=$'\t'
-while read n c ; do
+while read -r n c ; do
     gh label create --force "$n" --color "$c" &> /dev/null || true
     sleep 1
 done < names-colors.txt
