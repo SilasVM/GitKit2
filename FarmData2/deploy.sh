@@ -41,7 +41,9 @@ deploy() {
     create-remote
     install-features
     commit
+    post-commit-install-features
     push
+    post-push-install-features
 }
 
 clone() {
@@ -124,11 +126,33 @@ commit() {
     )
 }
 
+post-commit-install-features() {
+    (
+        for f in "${KIT_DIR}"/features/* ; do
+        (
+            cd "${f}"
+            test ! -e ./post-commit-install-into-instance.sh || ./post-commit-install-into-instance.sh
+        )
+        done
+    )
+}
+
 push() {
     (
         cd "${REPO_DIR}"
         git push --all
         git push --tags
+    )
+}
+
+post-push-install-features() {
+    (
+        for f in "${KIT_DIR}"/features/* ; do
+        (
+            cd "${f}"
+            test ! -e ./post-push-install-into-instance.sh || ./post-push-install-into-instance.sh
+        )
+        done
     )
 }
 
