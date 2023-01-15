@@ -2,3 +2,4 @@
 
 git switch merge-conflict-practice
 git rebase main
+git switch main
