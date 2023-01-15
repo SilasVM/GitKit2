@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-set -e
+set -ex
 
-SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )"
 
 export TARGET_ORG="${1}"
 export PROJ_DIR="${SCRIPT_DIR}"
@@ -10,25 +10,8 @@ export REPO_DIR="${SCRIPT_DIR}/repository"
 export GIT_DIR="${SCRIPT_DIR}/repository/.git"
 export KIT_DIR="${SCRIPT_DIR}/repository/.kit"
 
-
-TESTING=false
-export TESTING
-
-if [ "${TESTING}" = "true" ] ; then
-    set -x
-    TARGET_REPO=https://github.com/HFOSSedu/TestKit.git
-    TARGET_COMMIT=b058258daac4a6934e73f5bee796444d1f8c0e21
-    gh() {
-        if [ "$1" = "repo" ] ; then
-            "$(which gh)" "$@"
-        fi
-    }
-    export -f gh
-else
-    TARGET_REPO="https://github.com/DickinsonCollege/FarmData2.git"
-    TARGET_COMMIT="d622e8d6d71e27890c73e2428e6dcf9d44ca606e"
-fi
-
+TARGET_REPO="https://github.com/DickinsonCollege/FarmData2.git"
+TARGET_COMMIT="d622e8d6d71e27890c73e2428e6dcf9d44ca606e"
 export TARGET_REPO
 export TARGET_COMMIT
 
@@ -39,9 +22,12 @@ deploy() {
     switch-to main
     reset-to-commit "$TARGET_COMMIT"
     create-remote
+    pre-install-features
     install-features
     commit
+    post-commit-install-features
     push
+    post-push-install-features
 }
 
 clone() {
@@ -102,6 +88,18 @@ get-project-name() {
     basename "${PROJ_DIR}"
 }
 
+pre-install-features() {
+    (
+        cp -R "${PROJ_DIR}"/features "${KIT_DIR}"
+
+        for f in "${PROJ_DIR}"/features/* ; do
+        (
+            test ! -e "${f}/pre-install-into-instance.sh" || "${f}/pre-install-into-instance.sh"
+        )
+        done
+    )
+}
+
 install-features() {
     (
         mkdir -p "${KIT_DIR}"
@@ -119,8 +117,20 @@ install-features() {
 commit() {
     (
         cd "${REPO_DIR}"
+        git reset --soft "${TARGET_COMMIT}"
         git add .
-        git commit -m "chore(kit): deploy"
+        git commit -m "chore: install kit"
+    )
+}
+
+post-commit-install-features() {
+    (
+        for f in "${KIT_DIR}"/features/* ; do
+        (
+            cd "${f}"
+            test ! -e ./post-commit-install-into-instance.sh || ./post-commit-install-into-instance.sh
+        )
+        done
     )
 }
 
@@ -129,6 +139,17 @@ push() {
         cd "${REPO_DIR}"
         git push --all
         git push --tags
+    )
+}
+
+post-push-install-features() {
+    (
+        for f in "${KIT_DIR}"/features/* ; do
+        (
+            cd "${f}"
+            test ! -e ./post-push-install-into-instance.sh || ./post-push-install-into-instance.sh
+        )
+        done
     )
 }
 
