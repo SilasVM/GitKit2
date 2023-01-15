@@ -94,7 +94,7 @@ pre-install-features() {
 
         for f in "${PROJ_DIR}"/features/* ; do
         (
-            test ! -e "${f}/install-into-instance.sh" || "${f}/install-into-instance.sh"
+            test ! -e "${f}/pre-install-into-instance.sh" || "${f}/pre-install-into-instance.sh"
         )
         done
     )
