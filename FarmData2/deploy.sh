@@ -2,7 +2,7 @@
 
 set -ex
 
-SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
+SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )"
 
 export TARGET_ORG="${1}"
 export PROJ_DIR="${SCRIPT_DIR}"
@@ -22,6 +22,7 @@ deploy() {
     switch-to main
     reset-to-commit "$TARGET_COMMIT"
     create-remote
+    pre-install-features
     install-features
     commit
     post-commit-install-features
@@ -87,6 +88,18 @@ get-project-name() {
     basename "${PROJ_DIR}"
 }
 
+pre-install-features() {
+    (
+        cp -R "${PROJ_DIR}"/features "${KIT_DIR}"
+
+        for f in "${PROJ_DIR}"/features/* ; do
+        (
+            test ! -e "${f}/install-into-instance.sh" || "${f}/install-into-instance.sh"
+        )
+        done
+    )
+}
+
 install-features() {
     (
         mkdir -p "${KIT_DIR}"
@@ -104,8 +117,9 @@ install-features() {
 commit() {
     (
         cd "${REPO_DIR}"
+        git reset --soft "${TARGET_COMMIT}"
         git add .
-        git commit -m "chore(kit): deploy"
+        git commit -m "chore: install kit"
     )
 }
 
