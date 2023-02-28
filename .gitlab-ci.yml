@@ -1,0 +1,5 @@
+include:
+  - remote: https://gitlab.com/LibreFoodPantry/common-services/tools/pipeline/-/raw/main/source/gitlab-ci/pipeline.yml
+
+variables:
+  ENABLE_MULTI_PLATFORM: "true"
