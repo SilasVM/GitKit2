@@ -3,4 +3,4 @@ include:
 
 variables:
   ENABLE_MULTI_PLATFORM: "true"
-  DEBUG: "true"
+
