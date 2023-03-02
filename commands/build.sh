@@ -1,28 +1,23 @@
 #!/usr/bin/env bash
-
-# Identify the directory containing this script.
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-
-# Move to project root.
 cd "${SCRIPT_DIR}/.."
 
-# Identify the dockerfile and its build context.
 DOCKERFILE="./gitkit-deploy.dockerfile"
 BUILD_CONTEXT="./"
 
-# The pipeline sets IMAGE_NAME.
-# If we're running locally, it's not set.
-# Set it to the project name, in lowercase.
-if [[ -n "$IMAGE_NAME" ]] ; then
-    IMAGE_NAME="$(basename "$(pwd)")"
-    IMAGE_NAME="${IMAGE_NAME,,}"
-fi
+# Used when called locally (i.e., not in pipeline)
+LOCAL_IMAGE_NAME="gitkit:dev"
 
-if [[ -n "$PIPELINE_BUILDX_OPTIONS" ]] ; then
-    # local build
-    docker build --tag "$IMAGE_NAME" --file "$DOCKERFILE" "$BUILD_CONTEXT"
+if [[ -n "$PIPELINE_BUILDX_BUILD_OPTIONS" ]] ; then
+    # multi-platform, in-pipeline build
+    docker buildx build $PIPELINE_BUILDX_BUILD_OPTIONS \
+        --file "$DOCKERFILE" "$BUILD_CONTEXT"
+elif [[ -n "$PIPELINE_IMAGE_NAME" ]] ; then
+    # single, default-platform, in-pipeline build
+    docker build --tag $PIPELINE_IMAGE_NAME \
+        --file "$DOCKERFILE" "$BUILD_CONTEXT"
 else
-    # pipeline build
-    docker buildx build $PIPELINE_BUILDX_OPTIONS --file "$DOCKERFILE" "$BUILD_CONTEXT"
+    # single, default-platform, local build
+    docker build --tag "$LOCAL_IMAGE_NAME" \
+        --file "$DOCKERFILE" "$BUILD_CONTEXT"
 fi
-
