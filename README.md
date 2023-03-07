@@ -50,7 +50,7 @@ You'll need Docker installed and running.
    organization.
 
       ```bash
-      docker run --rm -it -e GH_TOKEN==ghp_QWERTYasdf1234POIUljhxcvb registry.gitlab.com/hfossedu/kits/gitkit:latest https://github.com/wne-cs220-s2023
+      docker run --rm -it -e GH_TOKEN=ghp_QWERTYasdf1234POIUljhxcvb registry.gitlab.com/hfossedu/kits/gitkit:latest https://github.com/wne-cs220-s2023
       ```
 
 
