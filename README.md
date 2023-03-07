@@ -27,17 +27,32 @@ To set up this repository to use in your class, use the instructions below
 to create `https://github.com/<org>/GitKit-FarmData2` repository.
 You'll need Docker installed and running.
 
-1. On GitHub, create a personal access token with the following scopes
-   * repo (all)
-   * read:org
-   * workflow
+1. On GitHub, identify or create the organization into which you will deploy
+   GitKit. This can be your personal namespace, or it can be any organization
+   that you control. You cannot deploy GitKit into the same
+   namespace/organization twice. So if you want to redeploy GitKit, delete
+   the previous deployment first.
 
-2. Run the following replacing `<token>` with the token you just created,
-   and `<org>` with the GitHub organization (or username) to deploy into.
+2. On GitHub, create a personal access token with the following scopes
+   * repo (all)
+   * workflow
+   * read:org
+
+3. Run the following replacing `<token>` with the token you just created,
+   and `<org>` with the URL to the GitHub organization (or username) to deploy
+   into.
 
       ```bash
-      docker run --rm -it -e GH_TOKEN=<token> ghcr.io/hfossedu/gitkit-deploy <org>
+      docker run --rm -it -e GH_TOKEN=<token> registry.gitlab.com/hfossedu/kits/gitkit:latest <org>
       ```
+
+   For example, the following deploys the GitKit into the `wne-cs220-s2023`
+   organization.
+
+      ```bash
+      docker run --rm -it -e GH_TOKEN==ghp_QWERTYasdf1234POIUljhxcvb registry.gitlab.com/hfossedu/kits/gitkit:latest https://github.com/wne-cs220-s2023
+      ```
+
 
 #### Community and Collaboration
 
@@ -72,4 +87,3 @@ This kit was designed and developed by several people.
 * ["Stoney" Jackson](https://www1.wne.edu/arts-and-sciences/faculty.cfm?uid=203)
 * [Clif Kussmaul](https://kussmaul.org/)
 * [Cam Macdonell](https://www.macewan.ca/academics/academic-departments/computer-science/academics/capstone-projects/profile/?profileid=macdonellc4)
-
