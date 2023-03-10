@@ -36,11 +36,13 @@ You'll need Docker installed and running.
 2. On GitHub, create a personal access token with the following scopes
    * repo (all)
    * workflow
-   * read:org
+   * admin:org
+     * read:org
 
 3. Run the following replacing `<token>` with the token you just created,
-   and `<org>` with the URL to the GitHub organization (or username) to deploy
-   into.
+   and `<org>` with either a URL (without a trailing slash) to GitHub
+   organization or username to deploy into (e.g., `https://github.com/StoneyJackson`)
+   or just the org or user name (e.g., `StoneyJackson`).
 
       ```bash
       docker run --rm -it -e GH_TOKEN=<token> registry.gitlab.com/hfossedu/kits/gitkit:latest <org>
@@ -50,7 +52,7 @@ You'll need Docker installed and running.
    organization.
 
       ```bash
-      docker run --rm -it -e GH_TOKEN=ghp_QWERTYasdf1234POIUljhxcvb registry.gitlab.com/hfossedu/kits/gitkit:latest https://github.com/wne-cs220-s2023
+      docker run --rm -it -e GH_TOKEN=ghp_QWERTYasdf1234POIUljhxcvb registry.gitlab.com/hfossedu/kits/gitkit:latest wne-cs220-s2023
       ```
 
 
