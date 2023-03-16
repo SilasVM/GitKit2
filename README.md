@@ -33,7 +33,7 @@ You'll need Docker installed and running.
    namespace/organization twice. So if you want to redeploy GitKit, delete
    the previous deployment first.
 
-2. On GitHub, create a personal access token with the following scopes
+2. On GitHub, create a classic personal access token ([directions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic)), that expires in 7-days, with the following scopes
    * repo (all)
    * workflow
    * admin:org
