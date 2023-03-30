@@ -6,18 +6,19 @@
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )";
 
 INSTALL_INTO_SHELL_TEMPLATE_SH="$SCRIPT_DIR/install-into-shell_template.sh"
-INSTALL_INTO_SHELL_SH="$SCRIPT_DIR/install-into-shell.sh"
+USER_KIT_DIR="$HOME/.kit"
+INSTALL_INTO_SHELL_SH="$USER_KIT_DIR/install-into-shell.sh"
 SUB_SHIMS_DIR="$SCRIPT_DIR/sub-shims"
 BASHRC="${HOME}/.bashrc"
 
 install() {
     generate-install-script
     call-install-script-from-bashrc
-    delete-install-script
 }
 
 generate-install-script() {
     # Embed the path to the sub-shims directory into the install-into-shell script.
+    mkdir -p "$USER_KIT_DIR"
     sed "s@replace-with-path-to-sub-shims@$SUB_SHIMS_DIR@" \
             "$INSTALL_INTO_SHELL_TEMPLATE_SH" > "$INSTALL_INTO_SHELL_SH"
     chmod +x "$INSTALL_INTO_SHELL_SH"
@@ -27,10 +28,6 @@ call-install-script-from-bashrc() {
     printf '# install git-shim\n' >> "$BASHRC"
     # shellcheck disable=SC2016
     printf '%s%s%s\n' 'eval "$(' "$INSTALL_INTO_SHELL_SH" ')"'  >> "$BASHRC"
-}
-
-delete-install-script() {
-    rm "$INSTALL_INTO_SHELL_SH"
 }
 
 install
