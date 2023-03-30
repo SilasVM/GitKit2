@@ -13,6 +13,7 @@ BASHRC="${HOME}/.bashrc"
 install() {
     generate-install-script
     call-install-script-from-bashrc
+    delete-install-script
 }
 
 generate-install-script() {
@@ -26,6 +27,10 @@ call-install-script-from-bashrc() {
     printf '# install git-shim\n' >> "$BASHRC"
     # shellcheck disable=SC2016
     printf '%s%s%s\n' 'eval "$(' "$INSTALL_INTO_SHELL_SH" ')"'  >> "$BASHRC"
+}
+
+delete-install-script() {
+    rm "$INSTALL_INTO_SHELL_SH"
 }
 
 install
