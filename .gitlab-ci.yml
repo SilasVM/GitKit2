@@ -3,3 +3,5 @@ include:
 
 variables:
   PIPELINE_IMAGE_PLATFORMS: "linux/amd64,linux/arm64"
+  IMAGE_NAME: "gitkit"
+  DISABLE_JOBS: "megalinter,lint-package-json"

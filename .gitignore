@@ -1,5 +1,8 @@
 FarmData2/repository
 
+# A place for temporary project files.
+.temp
+
 # Ignore git-shim's generated install-into-shell.sh
 8-git-shim/install-into-shell.sh
 
