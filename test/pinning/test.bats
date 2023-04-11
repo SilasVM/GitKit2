@@ -45,9 +45,9 @@ define_gold_file() {
     export -f sleep
 
     run_system_under_test > $TRACE_FILE
-    diff $TRACE_FILE $GOLD_FILE >&3
+    diff $GOLD_FILE $TRACE_FILE >&3
     if $? ; then
         echo "For a side-by-side, try " >&3
-        echo "vimdiff $TRACE_FILE $GOLD_FILE" >&3
+        echo "vimdiff $GOLD_FILE $TRACE_FILE" >&3
     fi
 }
