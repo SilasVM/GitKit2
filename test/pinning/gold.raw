@@ -1,9 +1,10 @@
 mocked: git clone https://github.com/DickinsonCollege/FarmData2.git .
 mocked: git config user.email kit@example.com
 mocked: git config user.name kit
-mocked: git remote remove origin
 mocked: git switch main
 mocked: git reset --hard d622e8d6d71e27890c73e2428e6dcf9d44ca606e
+mocked: git switch main
+mocked: git remote remove origin
 mocked: gh repo create /GitKit-FarmData2 --public
 mocked: git remote add origin https://@github.com//GitKit-FarmData2
 mocked: git switch main

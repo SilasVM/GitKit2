@@ -10,17 +10,14 @@ export REPO_DIR="${SCRIPT_DIR}/repository"
 export GIT_DIR="${SCRIPT_DIR}/repository/.git"
 export KIT_DIR="${SCRIPT_DIR}/repository/.kit"
 
-TARGET_REPO="https://github.com/DickinsonCollege/FarmData2.git"
-TARGET_COMMIT="d622e8d6d71e27890c73e2428e6dcf9d44ca606e"
-export TARGET_REPO
-export TARGET_COMMIT
+source "${SCRIPT_DIR}/project-config.sh"
 
 deploy() {
-    clone "$TARGET_REPO"
+    clone "$SOURCE_REPO_CLONE_URL"
     identify-as "kit" "kit@example.com"
-    remove-remote origin
+    switch-to-each-branch-to-keep
     switch-to main
-    reset-to-commit "$TARGET_COMMIT"
+    remove-remote origin
     create-remote
     pre-install-features
     install-features
@@ -30,38 +27,52 @@ deploy() {
     post-push-install-features
 }
 
-clone() {
-    (
-        mkdir -p "${REPO_DIR}"
-        cd "${REPO_DIR}"
-        git clone "$1" .
-    )
-}
+    clone() {
+        (
+            mkdir -p "${REPO_DIR}"
+            cd "${REPO_DIR}"
+            git clone "$1" .
+        )
+    }
 
-identify-as() {
-    (
-        cd "${REPO_DIR}"
-        git config user.email "$2"
-        git config user.name "$1"
-    )
-}
+    identify-as() {
+        (
+            cd "${REPO_DIR}"
+            git config user.email "$2"
+            git config user.name "$1"
+        )
+    }
+
+    switch-to-each-branch-to-keep() {
+        for BRANCH_DESCRIPTION in "${SOURCE_REPO_BRANCHES[@]}" ; do
+            IFS=":" read -r -a PARTS <<< "${BRANCH_DESCRIPTION}"
+            BRANCH_NAME="${PARTS[0]}"
+            BRANCH_COMMIT="${PARTS[1]}"
+            switch-to "$BRANCH_NAME"
+            reset-to-commit "$BRANCH_COMMIT"
+            if [[ "$BRANCH_NAME" == "main" ]] ; then
+                MAIN_COMMIT="$BRANCH_COMMIT"
+                export MAIN_COMMIT
+            fi
+        done
+    }
+
+        switch-to() {
+            (
+                cd "${REPO_DIR}"
+                git switch "$1"
+            )
+        }
+
+        reset-to-commit() {
+            (
+                cd "${REPO_DIR}"
+                git reset --hard "$1"
+            )
+        }
 
 remove-remote() {
     git remote remove "$1"
-}
-
-switch-to() {
-    (
-        cd "${REPO_DIR}"
-        git switch "$1"
-    )
-}
-
-reset-to-commit() {
-    (
-        cd "${REPO_DIR}"
-        git reset --hard "$1"
-    )
 }
 
 create-remote() {
@@ -76,17 +87,17 @@ create-remote() {
     )
 }
 
-get-org-name() {
-    local n
-    n="$1"
-    n="${n##*github.com/}"
-    n="${n%.git}"
-    echo "$n"
-}
+    get-org-name() {
+        local n
+        n="$1"
+        n="${n##*github.com/}"
+        n="${n%.git}"
+        echo "$n"
+    }
 
-get-project-name() {
-    basename "${PROJ_DIR}"
-}
+    get-project-name() {
+        basename "${PROJ_DIR}"
+    }
 
 pre-install-features() {
     (
@@ -117,7 +128,7 @@ install-features() {
 commit() {
     (
         cd "${REPO_DIR}"
-        git reset --soft "${TARGET_COMMIT}"
+        git reset --soft "${MAIN_COMMIT}"
         git add .
         git commit -m "chore: install kit"
     )
