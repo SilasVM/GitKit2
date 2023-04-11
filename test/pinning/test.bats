@@ -30,7 +30,7 @@ define_gold_file() {
     GOLD_FILE=test/pinning/gold.raw
 }
 
-@test "clones given repo" {
+@test "pinning test" {
     gh() {
         echo "mocked: gh $@"
     }
