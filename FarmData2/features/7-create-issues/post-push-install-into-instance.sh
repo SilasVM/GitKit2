@@ -23,7 +23,6 @@ while [[ "$o" != "null" ]] ; do
         echo "Pre-assigning issue '$title' to currently authenticated user"
         gh issue create --title "$title" --body "$body" --label "$labels"  --assignee "@me"
     else
-        echo ""
         gh issue create --title "$title" --body "$body" --label "$labels" 
     fi
 
