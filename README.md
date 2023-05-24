@@ -21,7 +21,7 @@ There is a sequence of 4 activities that cover the following topics:
 
 ### Using this Repository
 
-**Note:** One fork will support up to 26 students. If you have more than 26 students you will need to have multiple repositories.
+**Note:** One fork will support up to 25 students. If you have more than 25 students you will need to have multiple repositories.
 
 To set up this repository to use in your class, use the instructions below
 to create `https://github.com/<org>/GitKit-FarmData2` repository.
@@ -58,7 +58,7 @@ You'll need Docker installed and running.
 
 #### Community and Collaboration
 
-In this activity students will fork and clone the repository and will claim a `Round1` issue in the issue tracker.  The activity instructs students to claim an issue by commenting on it and that issues will be assigned to the first student to comment on each issue.  The instructor should assign issues to the student in the issue tracker.  There are enough `Round1` issues for 26 students.
+In this activity students will fork and clone the repository and will claim a `Round1` issue in the issue tracker.  The activity instructs students to claim an issue by commenting on it and that issues will be assigned to the first student to comment on each issue.  The instructor should assign issues to the student in the issue tracker.  There are enough `Round1` issues for 25 students. There will be one issue already pre-assigned to you the instructor for demonstration purposes.
 
 #### Working Local & Upstreaming
 

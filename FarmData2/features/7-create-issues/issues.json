@@ -6,7 +6,8 @@
       "documentation",
       "Typos",
       "Round1"
-    ]
+    ],
+    "preassigned": true
   },
   {
     "title": "Format Role Names",
