@@ -5,6 +5,7 @@ RUN apk update && \
 # FIX: for https://github.com/orgs/community/discussions/55820
 # Update this when there is a better solution.
 RUN git config --global http.version HTTP/1.1
+RUN git config --global http.postBuffer 157286400
 
 WORKDIR /gitkit
 COPY . ./
