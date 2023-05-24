@@ -15,8 +15,17 @@ while [[ "$o" != "null" ]] ; do
     title="$(echo "$o" | yq '.title')"
     body="$(echo "$o" | yq '.body')"
     labels="$(echo "$o" | yq '.labels[]' | sed ':a;N;$!ba;s/\n/,/g')"
-    echo "Creating issue: $title"
-    gh issue create --title "$title" --body "$body" --label "$labels"
+    preassigned="$(echo "$o" | yq '.preassigned')"
+
+    echo "Creating issue: '$title'"
+    if [ $preassigned == true ]
+    then
+        echo "Pre-assigning issue '$title' to currently authenticated user"
+        gh issue create --title "$title" --body "$body" --label "$labels"  --assignee "@me"
+    else
+        gh issue create --title "$title" --body "$body" --label "$labels" 
+    fi
+
     sleep 3
     ((++i))
     o="$(yq ".[${i}]" < issues.json)"
