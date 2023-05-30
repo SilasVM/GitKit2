@@ -1,0 +1,94 @@
+name: Pull Request Checker
+
+on:
+  pull_request:
+    types: [edited, synchronize, opened, reopened]
+
+jobs:
+  pull-request-checker:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - uses: actions/github-script@v6
+        with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
+          script: |
+            
+            const ORG = context.payload.organization.login;
+            const REPO = context.payload.repository.name;
+            const REPO_BASE_API_URL = `https://api.github.com/repos/${ORG}/${REPO}`;
+            const ISSUE_LINK_REGEX = /\b(?:close[sd]?|fix(?:es|ed)?|resolve[sd]?)\b #[0-9]+ /gi;
+                        
+            core.info('Checking for issue links in pull request description');
+            let matches = context.payload.pull_request.body.match(ISSUE_LINK_REGEX);
+            if(matches){
+              core.info('   --- Issue Links found');
+            } else {
+              core.setFailed('No Issue Links found');
+              generateCommentOnFail('no_link');
+              return;
+            }
+
+            core.info('Checking that any found issue links reference the same issue number');
+            let linkedIssueNumber;
+            matches = matches.map(item => item.replace(/\D/g, '')); //extracting just issue numbers
+            if(matches.every((match, index, arr) =>  match === arr[0])){
+              linkedIssueNumber = matches[0];
+              core.info(`   --- All issue numbers match with issue #${linkedIssueNumber}`);
+            } else {
+              core.setFailed('Multiple links referencing different issues');
+              generateCommentOnFail('links_reference_multiple_issues', { issue_numbers: matches });
+              return;
+            }
+
+            core.info('Checking that referenced issue number exists as a valid issue');
+            //retrieving all existing issues using gh api
+            const response = await fetch(`${REPO_BASE_API_URL}/issues`);
+            const issues = await response.json();
+            const validIssue = issues.find(issue => issue.number == linkedIssueNumber);
+            if(validIssue){
+              core.info(`   --- Referenced issue number #${linkedIssueNumber} found in list of issues`);
+            } else {
+              core.setFailed(`Referenced issue number #${linkedIssueNumber} is not found in list of issues`);
+              generateCommentOnFail('issue_doesnt_exist', { issue_number: linkedIssueNumber });
+              return;
+            }
+            
+            core.info('Checking that the referenced issue number has been assigned to the pull Request creator');            
+            if(validIssue.assignees.find(assignee => assignee.login === context.payload.sender.login)){
+              core.info(`   --- Pull request submitter '${context.payload.sender.login}' is confirmed assigned to issue #${linkedIssueNumber}`);
+            } else {
+              core.setFailed(`Pull request submitter '${context.payload.sender.login}' is currently not assigned to issue #${linkedIssueNumber}`);
+              generateCommentOnFail('not_assignee', { issue_number: linkedIssueNumber });
+              return;
+            }
+            
+            ///////////////////////////////// HELPER FUNCTIONS ///////////////////////////////////////
+            
+            function generateCommentOnFail(reason, additionalInfo){
+              let markdown = '### There was a problem with your pull request submission';
+              
+              switch(reason){
+                case 'no_link':
+                  markdown = `${markdown}\n#### :x: No issue link found in pull request description\n\nThe activity instructions required you to reference the issue for which you were submitting this Pull Request.\nModify the above description of this Pull Request and add the required issue link.`;
+                  break;
+                case 'links_reference_multiple_issues':
+                  markdown = `${markdown}\n#### :x: Multiple links referencing different issues\n\nYou have submitted more than one link to the issue however the links refer to different issues.\nIssues referenced: ${additionalInfo.issue_numbers.join()}\nModify the above description of this pull request to either have only one issue link, or have multiple links that all reference the same issue.`;
+                  break;
+                case 'issue_doesnt_exist':
+                  markdown = `${markdown}\n#### :x: Referenced issue doesn't exist\n\nYou have linked to an issue, however that issue doesn't exist in the available list of issues.\nIssues number referenced: ${ additionalInfo.issue_number }\nModify the link that you submitted so that it references an existing issue.`;
+                  break;
+                case 'not_assignee':
+                  markdown = `${markdown}\n#### :x: You are currently not assigned to this issue\n\nYou have linked to an issue for which you are currently not an assignee.\nIssues number referenced: ${ additionalInfo.issue_number }\nDid you link to the wrong issue? If so, fix the link in the above Pull Request description.\nIf you have linked to the correct issue, take the steps necessary so that you become an assignee to that issue.`;
+                  break;
+              }
+              
+              //generate comment with provided markdown
+              github.rest.issues.createComment({
+                issue_number: context.issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: markdown
+              })
+            }

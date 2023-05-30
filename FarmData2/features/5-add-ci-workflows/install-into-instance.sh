@@ -7,6 +7,6 @@ SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && 
 
 set -e
 
-workflows_dir="${REPO_DIR}/.github/workflows"
-mkdir -p "$workflows_dir"
-cp "$SCRIPT_DIR/allow-anyone-to-self-assign-an-issue.yaml" "$workflows_dir"
+github_dir="${REPO_DIR}/.github"
+mkdir -p "$github_dir"
+cp -r "$SCRIPT_DIR/workflows" "$github_dir"
