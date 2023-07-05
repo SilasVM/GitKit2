@@ -1,0 +1,21 @@
+{
+    "words": [
+        "alexkaratarakis",
+        "devcontainer",
+       "Dockerfiles",
+        "gitattribute",
+        "healthcheck",
+        "openapi",
+        "premerge",
+        "workdir"
+    ],
+    "ignorePaths": [
+        "Dockerfile",
+        "devcontainer.json",
+        ".gitattributes",
+        "*.sh",
+        "LICENSE",
+        ".gitlab-ci.yml",
+        ".cspell.json"
+    ]
+}
