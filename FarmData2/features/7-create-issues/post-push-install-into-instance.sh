@@ -18,7 +18,7 @@ while [[ "$o" != "null" ]] ; do
     preassigned="$(echo "$o" | yq '.preassigned')"
 
     echo "Creating issue: '$title'"
-    if [ $preassigned == true ]
+    if [ "$preassigned" == true ]
     then
         echo "Pre-assigning issue '$title' to currently authenticated user"
         gh issue create --title "$title" --body "$body" --label "$labels"  --assignee "@me"

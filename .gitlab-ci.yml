@@ -1,3 +1,4 @@
+---
 include:
   - remote: "https://gitlab.com/LibreFoodPantry/common-services/tools/\
       pipeline/-/raw/main/source/gitlab-ci/pipeline.yml"
@@ -7,4 +8,4 @@ variables:
   IMAGE_NAME: "gitkit"
   DISABLE_JOBS: ""
   ENABLE_JOBS: "shellcheck, yamllint, eslint, lint-package-json,
-    markdownlint-cli2, markdownlinkcheck, hadolint"
+    markdownlint-cli2, markdownlinkcheck, hadolint, cspell"

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
-cd "${SCRIPT_DIR}/.."
+cd "${SCRIPT_DIR}/.." || exit
 
 DOCKERFILE="./gitkit-deploy.dockerfile"
 BUILD_CONTEXT="./"
@@ -10,11 +10,11 @@ LOCAL_IMAGE_NAME="gitkit:dev"
 
 if [[ -n "$PIPELINE_BUILDX_BUILD_OPTIONS" ]] ; then
     # multi-platform, in-pipeline build
-    docker buildx build $PIPELINE_BUILDX_BUILD_OPTIONS \
+    docker buildx build "$PIPELINE_BUILDX_BUILD_OPTIONS" \
         --file "$DOCKERFILE" "$BUILD_CONTEXT"
 elif [[ -n "$PIPELINE_IMAGE_NAME" ]] ; then
     # single, default-platform, in-pipeline build
-    docker build --tag $PIPELINE_IMAGE_NAME \
+    docker build --tag "$PIPELINE_IMAGE_NAME" \
         --file "$DOCKERFILE" "$BUILD_CONTEXT"
 else
     # single, default-platform, local build
