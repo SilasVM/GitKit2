@@ -15,7 +15,7 @@ jobs:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             
-            const ORG = context.payload.organization.login;
+            const ORG = context.payload.repository.owner.login;
             const REPO = context.payload.repository.name;
             const REPO_BASE_API_URL = `https://api.github.com/repos/${ORG}/${REPO}`;
             const ISSUE_LINK_REGEX = /\b(?:close[sd]?|fix(?:es|ed)?|resolve[sd]?)\b #[0-9]+ /gi;
