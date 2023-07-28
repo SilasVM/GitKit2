@@ -80,6 +80,97 @@ In this activity students synchronize with the upstream to get the conflicting c
 
 Inevitably some students will be behind on their work and will complete their sync with upstream after you have merged the `addRound2Conflicts` branch.  In these cases, their pull requests will not create a conflict to be resolved.  These students should pull the `mergeConflictPractice` branch and create a pull request for it.  That branch contains conflicts with those introduced in the `addRound2Conflicts` branch.  So they can then complete the activity using the `mergeConflictPractice` branch as it it were their original feature branch. Students not in this situation, but who would like additional practice can also pull and use the `mergeConflictPractice` branch.
 
+## Student Development Environment
+
+The activities for the GitKit were written to be used with the
+[KitClient](https://gitlab.com/hfossedu/kits/KitClient) - a standalone
+Docker image with the required tools installed. There is now a second
+option available for the student development environment - a *Visual Studio
+Code devcontainer*.
+
+(The slides are independent of development environment, except for
+presentation 4 - MergeConflicts, slide 15 which shows the Meld merge tool,
+rather than the git merge editor.)
+
+### KitClient
+
+If you wish to have your students use the KitClient, you can follow the
+activities as written.
+
+### Visual Studio Code devcontainer
+
+#### Deployment
+
+Deploy the GitKit with the following command:
+
+```bash
+docker run --rm -it -e GH_TOKEN=<token> registry.gitlab.com/hfossedu/kits/gitkit:vscode-devcontainer <org>
+```
+
+Note the `vscode-devcontainer` image tag, rather than `latest`.
+
+#### Activities
+You will need to make the following changes as you work through the activities.
+
+##### Activity 1
+
+* Install *Docker Desktop* as in step 7a.
+* **You do not need to install** *TigerVNC Viewer* as in step 7b.
+* Install [*Git*](https://git-scm.com/downloads)
+* Configure Git as in step 10.
+* Install [*Visual Studio Code*](https://code.visualstudio.com/download)
+* Install the
+[*Dev Containers* extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) in Visual Studio Code.
+* Skip steps 8 and 9.
+* Clone your FarmData2 Fork as in step 11.
+* Start Visual Studio Code.
+* Open the folder for your FarmData2 fork in Visual Studio Code.
+* When Visual Studio Code gives you the option, select *Reopen in Container*
+* Once you see Kit-tty welcome message, close the window.
+* In the terminal, enter your name when requested.
+
+Starting from step 12, you can continue as written, entering all the terminal
+commands into the Visual Studio Code terminal window (rather than the KitClient
+terminal.)
+
+#### Activity 2
+
+* Skip steps 1 and 2.
+* Start Visual Studio Code.
+* Open the folder for your FarmData2 fork in Visual Studio Code.
+* When Visual Studio Code gives you the option, select *Reopen in Container*
+
+Starting from step 3, you can continue as written, entering all the terminal
+commands into the Visual Studio Code terminal window (rather than the KitClient
+terminal.) When you are asked to use a text editor, edit the files in Visual
+Studio Code.
+
+#### Activity 3
+
+* Start Visual Studio Code.
+* Open the folder for your FarmData2 fork in Visual Studio Code.
+* When Visual Studio Code gives you the option, select *Reopen in Container*
+
+Starting from step 1, you can continue as written, entering all the terminal
+commands into the Visual Studio Code terminal window (rather than the KitClient
+terminal.) When you are asked to use a text editor, edit the files in Visual
+Studio Code.
+
+#### Activity 4
+
+* Complete steps 1 and 2 as written.
+* Skip step 3, and instead start Visual Studio Code, opening the folder for
+your fork, and reopening in the container.
+* Continuing from steps 4 through 12, you can continue as written, entering
+all the terminal commands into the Visual Studio Code terminal window
+(rather than the KitClient terminal.) When you are asked to use a text
+editor, edit the files in Visual Studio Code.
+* For steps 13-17 you will be using the git merge editor, rather than Meld.
+* In step 15, **do not click the blue Complete Merge button** after resolving
+your conflicts using the *Accept* and/or *Remove* options. **Close the git
+merge editor at this point.**
+* Continue from step 16 as written.
+
 ## Acknowledgments
 
 This kit was designed and developed by several people.
