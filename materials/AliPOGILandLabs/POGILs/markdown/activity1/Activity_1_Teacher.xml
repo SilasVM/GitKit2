@@ -1,0 +1,1038 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.5//EN" "http://www.oasis-open.org/docbook/xml/4.5/docbookx.dtd">
+<?asciidoc-toc?>
+<?asciidoc-numbered?>
+
+<article lang="en">
+<articleinfo>
+    <date>2023-08-26</date>
+</articleinfo>
+<section id="_activity_1_free_and_open_source_software_foss">
+<title>Activity 1: Free and Open Source Software (FOSS)</title>
+<simpara>This activity introduces the concepts of FOSS. It then investigates some
+elements, structures, roles and principles shared by many (but not all)
+FOSS.</simpara>
+<section id="_content_learning_objectives">
+<title>Content Learning Objectives</title>
+<simpara><emphasis>After completing this activity, students should be able to:</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Describes the general concepts and the main terms of FOSS.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Describe reasons that individuals support &amp; participate in FOSS
+projects, including but not limited to financial incentives.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Describe roles in a typical FOSS project, and how people transition
+between roles.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_process_skill_goals">
+<title>Process Skill Goals</title>
+<simpara><emphasis>During the activity, students should make progress toward:</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Teamwork
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Information processing
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_team_roles">
+<title>Team Roles</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<emphasis>Before you start, make sure everyone in your team has a new role (not
+the same role as the last activity).</emphasis>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis>If you have three people, combine the Manager and Reflector roles.</emphasis>
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><emphasis>Record role assignments here.</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Manager:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Presenter:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Recorder:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Reflector:
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_model_1_foss_introduction">
+<title>Model 1: FOSS Introduction</title>
+<section id="_information">
+<title>Information</title>
+<simpara>An open source software community is a group of people united by the
+shared purpose of developing, maintaining, extending, and promoting a
+specific body of open source software. These communities are often
+globally distributed—their members occupy different geographic regions
+and work across numerous industries. What unites them is their common
+vision for the open source software project—as well as the spirit of
+camaraderie and collective identity that participating in the community
+affords them.</simpara>
+<blockquote>
+<simpara><emphasis role="strong">INSTRUCTOR</emphasis></simpara>
+<simpara>For this model, instructors can choose to:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Post the video as homework before class starts
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Play the video in the classroom before students start working on the
+model.
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>The video duration is 5:41 sec.</simpara>
+</blockquote>
+</section>
+<section id="_instructions_and_questions_15_min">
+<title>Instructions and Questions (15 min)</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+Watch the &#8220;Open Source Basics&#8221; video by Sarah Moyle for Intel
+Software. The video uses &#8220;family cookies recipe&#8221; as a metaphor for the
+processes that FOSS communities use to collaborate.
+</simpara>
+<simpara><ulink url="https://www.youtube.com/watch?v=Tyd0FO0tko8">https://www.youtube.com/watch?v=Tyd0FO0tko8</ulink></simpara>
+<simpara>As a team, discuss these terms from the video and agree on a brief
+description for each of them (your descriptions can be changed or
+enhanced in the next POGIL activities):</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+Roles:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Rules &#8594; License:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Contributor:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Maintainer:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Upstreaming:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Branch / Patch:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Main branch:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Fork:
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+What does &#8220;Upstream early and often&#8221; mean? and why we need to do it?
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Who makes up the community in the Cookie example?
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+What are some challenges that an open source community will face?
+</simpara>
+<blockquote>
+<simpara><emphasis role="strong">POTENTIAL ANSWERS</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Coordination and Collaboration
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+globally distributed
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+different regions / languages / time zones
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+different industries
+</simpara>
+</listitem>
+</itemizedlist>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+What advantages/opportunities does an open source community afford?
+</simpara>
+<blockquote>
+<simpara><emphasis role="strong">POTENTIAL ANSWERS</emphasis></simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<emphasis role="strong">larger community</emphasis>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis role="strong">more diverse community</emphasis>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis role="strong">varied perspectives</emphasis>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis role="strong">distinct skill sets and expertise</emphasis>
+</simpara>
+</listitem>
+</itemizedlist>
+</blockquote>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section id="_model_2_foss_motivations">
+<title>Model 2: FOSS Motivations</title>
+<section id="_information_2">
+<title>Information</title>
+<section id="_motivations">
+<title>Motivations</title>
+<simpara>In 2001, Karim Lakhani and Robert Wolf surveyed 684 developers in 287
+FOSS projects to understand why they contributed to FOSS. The table
+below summarizes their survey results.</simpara>
+<informaltable
+frame="all"
+rowsep="1" colsep="1"
+>
+<?dbhtml table-width="100%"?>
+<?dbfo table-width="100%"?>
+<?dblatex table-width="100%"?>
+<tgroup cols="4">
+<colspec colname="col_1" colwidth="123*"/>
+<colspec colname="col_2" colwidth="60*"/>
+<colspec colname="col_3" colwidth="85*"/>
+<colspec colname="col_4" colwidth="157*"/>
+<thead>
+<row>
+<entry align="left" valign="top">Motivation </entry>
+<entry align="left" valign="top">% all </entry>
+<entry align="left" valign="top">% paid </entry>
+<entry align="left" valign="top">% volunteers</entry>
+</row>
+</thead>
+<tbody>
+<row>
+<entry align="left" valign="top"><simpara>This code is intellectually stimulating to write.</simpara></entry>
+<entry align="left" valign="top"><simpara>45%</simpara></entry>
+<entry align="left" valign="top"><simpara>43%</simpara></entry>
+<entry align="left" valign="top"><simpara>46%</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>They liked working with the development team.</simpara></entry>
+<entry align="left" valign="top"><simpara>20%</simpara></entry>
+<entry align="left" valign="top"><simpara>18%</simpara></entry>
+<entry align="left" valign="top"><simpara>21%</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Improve programming skills.</simpara></entry>
+<entry align="left" valign="top"><simpara>41%</simpara></entry>
+<entry align="left" valign="top"><simpara>33%</simpara></entry>
+<entry align="left" valign="top"><simpara>46%</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Code is needed for work.</simpara></entry>
+<entry align="left" valign="top"><simpara>34%</simpara></entry>
+<entry align="left" valign="top"><simpara>56%</simpara></entry>
+<entry align="left" valign="top"><simpara>19%</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Code is needed for non-work.</simpara></entry>
+<entry align="left" valign="top"><simpara>30%</simpara></entry>
+<entry align="left" valign="top"><simpara>19%</simpara></entry>
+<entry align="left" valign="top"><simpara>37%</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Enhance professional status.</simpara></entry>
+<entry align="left" valign="top"><simpara>17%</simpara></entry>
+<entry align="left" valign="top"><simpara>23%</simpara></entry>
+<entry align="left" valign="top"><simpara>14%</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>They believe that source code should be open.</simpara></entry>
+<entry align="left" valign="top"><simpara>33%</simpara></entry>
+<entry align="left" valign="top"><simpara>31%</simpara></entry>
+<entry align="left" valign="top"><simpara>35%</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>They feel an obligation to contribute because of the use of FOSS.</simpara></entry>
+<entry align="left" valign="top"><simpara>29%</simpara></entry>
+<entry align="left" valign="top"><simpara>27%</simpara></entry>
+<entry align="left" valign="top"><simpara>30%</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Dislike proprietary software.</simpara></entry>
+<entry align="left" valign="top"><simpara>11%</simpara></entry>
+<entry align="left" valign="top"><simpara>11%</simpara></entry>
+<entry align="left" valign="top"><simpara>11%</simpara></entry>
+</row>
+<row>
+<entry align="left" valign="top"><simpara>Improve one’s reputation in the FOSS community.</simpara></entry>
+<entry align="left" valign="top"><simpara>11%</simpara></entry>
+<entry align="left" valign="top"><simpara>9%</simpara></entry>
+<entry align="left" valign="top"><simpara>12%</simpara></entry>
+</row>
+</tbody>
+</tgroup>
+</informaltable>
+</section>
+</section>
+<section id="_instructions_and_questions_10_min">
+<title>Instructions and Questions (10 min)</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+Based on the above table, answer the following questions (answer using
+the bold words from the table such as; <emphasis role="strong">stimulating, team</emphasis> &#8230; etc.):
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+Column 2 shows responses from <emphasis role="strong">all</emphasis> participants. What are their two
+most common motivations?
+</simpara>
+<blockquote>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> stimulating, skills</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+What are their next four most common motivations?
+</simpara>
+<blockquote>
+<attribution>
+start=2
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> work, open, non-work, obligation</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+Column 3 shows responses from <emphasis role="strong">paid</emphasis> contributors. What are their two
+most common motivations?
+</simpara>
+<blockquote>
+<attribution>
+start=3
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> stimulating, work</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+What are their next three most common motivations?
+</simpara>
+<blockquote>
+<attribution>
+start=4
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> skill, open, status</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+Column 4 shows responses from unpaid <emphasis role="strong">volunteers</emphasis>. What are their two
+most common motivations?
+</simpara>
+<blockquote>
+<attribution>
+start=5
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> stimulating, skills</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+What are their next three most common motivations?
+</simpara>
+<blockquote>
+<attribution>
+start=6
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> non-work, open, motivation</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+Some motivations are similar for paid and volunteer work developers.
+What are the two biggest differences in motivation?
+</simpara>
+<blockquote>
+<attribution>
+start=7
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> work, non-work</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+What are the next two biggest differences?
+</simpara>
+<blockquote>
+<attribution>
+start=8
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> skills, status</simpara>
+</blockquote>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+Motivations can be classified into two categories: motivations based
+on <emphasis>personal enjoyment or fulfillmen</emphasis>t and motivations based on
+<emphasis>community obligations</emphasis>. List the motivations (obligation, stimulating,
+team, reputation, skills, work, non-work, status, open, dislike,
+non-work) in each category:
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+personal enjoyment or fulfillment
+</simpara>
+<blockquote>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> stimulating, team, skills, work, non-work, status</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+obligations or community
+</simpara>
+<blockquote>
+<attribution>
+start=2
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> open, obligation, dislike, reputation</simpara>
+</blockquote>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section id="_model_3_foss_principles">
+<title>Model 3: FOSS Principles</title>
+<section id="_information_3">
+<title>Information</title>
+<simpara>Principles of FOSS Communities:</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+Transparency.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Collaboration.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Release early and often.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Inclusive meritocracy.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Community.
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara>Read more about the principles in:
+<ulink url="https://opensource.com/open-source-way">https://opensource.com/open-source-way</ulink></simpara>
+</section>
+<section id="_instructions_and_questions_10_min_2">
+<title>Instructions and Questions (10 min)</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+Discuss the meaning of these words (Principles) and what do you think
+they mean in the context of a FOSS community?
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Why are these principles good things?
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Consider each of the following statements about the operation of a
+FOSS community and label it with the principle (or principles if
+multiple apply) with which it most closely aligns.
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+By building on each other’s work the community can solve problems
+that no one could solve alone. Principles:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Decisions and the rationale for them are available to the community.
+Principles:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+The mission and goals of the community are more important than
+individual agendas. Principles:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+The best ideas should win, regardless of where they come from.
+Principles:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Incorporating new changes and features quickly generates feedback and
+leads to rapid improvement. Principles:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Community members enhance and extend what others contribute in
+unanticipated ways. Principles:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Decision makers continually seek diverse perspectives. Principles:
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+All community members have access to the information necessary to do
+their best work. Principles:
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section id="_model_4_foss_community_structures">
+<title>Model 4: FOSS Community Structures</title>
+<section id="_information_4">
+<title>Information</title>
+<simpara>Below, two examples of pyramidal-structured organizations (<emphasis>non-FOSS</emphasis>).</simpara>
+<simpara><inlinemediaobject>
+  <imageobject>
+  <imagedata fileref="./pyramidal-organizations.png"/>
+  </imageobject>
+  <textobject><phrase>pyramidal organizations</phrase></textobject>
+</inlinemediaobject></simpara>
+</section>
+<section id="_instructions_and_questions_15_min_2">
+<title>Instructions and Questions (15 min)</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+As shown above, in many organizations, people are in a <emphasis role="strong">pyramidal
+structure</emphasis>.
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+What is the largest group of people in a college and in a business?
+</simpara>
+<blockquote>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> Students</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+What is the level above workers in a business?
+</simpara>
+<blockquote>
+<attribution>
+start=2
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> Team Leaders</simpara>
+</blockquote>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+As we move down the pyramid (from top to bottom):
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+Do responsibility and authority go up or down?
+</simpara>
+<blockquote>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> down</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+Does the number of people go up or down?
+</simpara>
+<blockquote>
+<attribution>
+start=2
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> up</simpara>
+</blockquote>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+Most large FOSS projects also have a pyramidal structure, but with
+different roles.
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+<emphasis role="strong">Contributors</emphasis> who add patches and test cases.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis role="strong">Core team</emphasis> of developers who work on the code, test suites, and
+documentation.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis role="strong">Leaders</emphasis> who make key decisions and consider long-term project
+goals.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis role="strong">Requesters</emphasis> who report defects and ask for new features.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis role="strong">Users</emphasis> who download and use the software.
+</simpara>
+<simpara>Put these roles (a-e) above in the correct order in the pyramid below:</simpara>
+<literallayout class="monospaced">1.  (top)
+2.
+3.
+4.
+5.  (bottom)</literallayout>
+<blockquote>
+<simpara><emphasis role="strong">ANSWERS:</emphasis></simpara>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+Leaders
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+Core Team
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+Contributors
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+Requestors
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+Users
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+</blockquote>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+In a typical FOSS project:
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+Which role has the largest number of people?
+</simpara>
+<blockquote>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> User</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+Which role has the smallest number of people?
+</simpara>
+<blockquote>
+<attribution>
+start=2
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> Leader</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+What is the most likely role for the people who started the project?
+</simpara>
+<blockquote>
+<attribution>
+start=3
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> Leader</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+Which role could a typical user easily transition to if they wanted
+to contribute more to the project?
+</simpara>
+<blockquote>
+<attribution>
+start=4
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> Requester</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+Which role is most likely to provide new leaders for the project?
+</simpara>
+<blockquote>
+<attribution>
+start=5
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> Core</simpara>
+</blockquote>
+</listitem>
+<listitem>
+<simpara>
+Which role is most likely to provide new contributors?
+</simpara>
+<blockquote>
+<attribution>
+start=6
+</attribution>
+<simpara><emphasis role="strong">ANSWERS:</emphasis> Requester</simpara>
+</blockquote>
+</listitem>
+</orderedlist>
+</listitem>
+<listitem>
+<simpara>
+Consider each of the actions described below. For each action, label
+it with the role of the individual (or individuals if multiple apply)
+that is <emphasis>most likely</emphasis> to be responsible for the action.
+</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+Choosing the license under which the project will be released.
+</simpara>
+<simpara>Roles:
+.. Using the software in a new, unanticipated or creative way.</simpara>
+<simpara>Roles:
+.. Asking that a useful new feature be added to the software.</simpara>
+<simpara>Roles:
+.. Discovering a bug in the software.</simpara>
+<simpara>Roles:
+.. Providing a code patch that fixes a bug in the software.</simpara>
+<simpara>Roles:
+.. Submitting an improved set of installation instructions.</simpara>
+<simpara>Roles:
+.. Documenting a bug in the issue tracker so others can fix it.</simpara>
+<simpara>Roles:
+.. Defining the goals for the next year of work on the project.</simpara>
+<simpara>Roles:
+.. Incorporating a contributed bug fix into the main branch.</simpara>
+<simpara>Roles:
+.. Redesigning a critical software module in the system.</simpara>
+<simpara>Roles:</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section id="_model_5_foss_anatomy">
+<title>Model 5: FOSS Anatomy</title>
+<section id="_information_5">
+<title>Information</title>
+<simpara>Open-source projects have a distinct culture and set of tools that
+support project development. The form of the culture and the specific
+tools vary somewhat across projects, but there is significant
+commonality such that many open source developers migrate easily among
+open source projects. This model focuses on Sugar Labs, a
+well-established humanitarian open source (FOSS) project.</simpara>
+</section>
+<section id="_instructions_and_questions_15_min_3">
+<title>Instructions and Questions (15 min)</title>
+<orderedlist numeration="arabic">
+<listitem>
+<simpara>
+Listed below are several important starting points for the <emphasis>Sugar
+Labs</emphasis> project. Take a quick look at each and then answer the questions
+below.
+</simpara>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="http://sugarlabs.org/">http://sugarlabs.org/</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="https://wiki.sugarlabs.org/go/Welcome\_to\_the\_Sugar\_Labs\_wiki">https://wiki.sugarlabs.org/go/Welcome\_to\_the\_Sugar\_Labs\_wiki</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="https://github.com/sugarlabs">https://github.com/sugarlabs</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="https://github.com/sugarlabs/sugar-docs">https://github.com/sugarlabs/sugar-docs</ulink>
+</simpara>
+<simpara>Answer the following questions:</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+Which of the links above would be the best starting point for someone
+interested in using Sugar?
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Which of the links above would be the best starting point for someone
+interested in contributing to Sugar?
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</itemizedlist>
+</listitem>
+<listitem>
+<simpara>
+Check the
+<ulink url="https://wiki.sugarlabs.org/go/Sugar_Labs/Getting_Involved">Getting
+Involved</ulink> page which describes the roles of various contributors to
+Sugar Labs. Note that there are a variety of different types of
+contributions that may be made by people in different roles.
+</simpara>
+<simpara>Answer the following questions:</simpara>
+<orderedlist numeration="loweralpha">
+<listitem>
+<simpara>
+What roles do you think would be most applicable for a new
+participant?
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+What are the commonalities across roles? What are the differences?
+</simpara>
+</listitem>
+</orderedlist>
+</listitem>
+</orderedlist>
+</section>
+</section>
+<section id="_team_s_reflection_5_min">
+<title>Team’s Reflection (5 min)</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<emphasis>Reflector:</emphasis> lead the discussion to review the team’s performance
+during the activity. The team must discuss two positive points and two
+areas for improvement for the next activities.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis>Recorder:</emphasis> type the discussion’s summary.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<emphasis>Reflector:</emphasis> be ready to present the points when asked.
+</simpara>
+</listitem>
+</itemizedlist>
+</section>
+<section id="_references_amp_resources">
+<title>References &amp; Resources</title>
+<itemizedlist>
+<listitem>
+<simpara>
+<ulink url="https://gitlab.com/hfossedu/kits/GitKit">https://gitlab.com/hfossedu/kits/GitKit</ulink>
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+<ulink url="http://foss2serve.org/index.php/Intro_to_FOSS_Project_Anatomy_(Activity">http://foss2serve.org/index.php/Intro_to_FOSS_Project_Anatomy_(Activity</ulink>)
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+K Crowston, J Howison (2005)
+<ulink url="https://firstmonday.org/article/view/1207/1127">The social structure of
+FOSS development</ulink>. <emphasis>First Monday</emphasis> 10(2).
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+C Jensen, W Scacchi (2007)
+<ulink url="http://ieeexplore.ieee.org/document/4222598/">Role migration and
+advancement processes in OSSD projects: A comparative case study</ulink>. In
+<emphasis>Proc. of the 29th Int’l Conf. on Software Engineering (ICSE’07)</emphasis>
+(pp. 364–374). IEEE Computer Society.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+KR Lakhani, RG Wolf (2003)
+<ulink url="http://papers.ssrn.com/sol3/Papers.cfm?abstract_id=443040">Why hackers do
+what they do: Understanding motivation &amp; effort in FOSS projects</ulink>. <emphasis>MIT
+Sloan Working Paper</emphasis> 4425-03.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+CG Wu, JH Gerlach, &amp; CE Young (2007)
+<ulink url="https://www.sciencedirect.com/science/article/abs/pii/S0378720607000067">An
+empirical analysis of OSS motivations &amp; intentions</ulink>. <emphasis>Information &amp;
+Management</emphasis> 44(3):253-262.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+Y Ye, K Kishida (2003)
+<ulink url="https://dl.acm.org/citation.cfm?id=776867">Toward an understanding of the
+motivation of open source software developers</ulink>. <emphasis>Int’l Conf. on Software
+Engineering</emphasis>, 419-429.
+</simpara>
+</listitem>
+<listitem>
+<simpara>
+The Open Source Way 2.0
+<ulink url="https://www.theopensourceway.org/the\_open\_source\_way-guidebook2.0.html">https://www.theopensourceway.org/the\_open\_source\_way-guidebook2.0.html</ulink>
+</simpara>
+</listitem>
+</itemizedlist>
+<simpara><?asciidoc-hr?></simpara>
+<simpara>© 2010-2023 by Clif Kussmaul, Greg Hislop, Lori Postner, Heidi Ellis,
+Ali Al-Faris. This work is licensed under a Creative Commons
+Attribution-NonCommercial-ShareAlike 4.0 International License. <emphasis role="strong">(Needs
+update)</emphasis></simpara>
+</section>
+</section>
+</article>

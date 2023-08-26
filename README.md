@@ -67,3 +67,62 @@ So what are the formats that we want to target? Here is an initial list.
 * PDF
 * HTML
 
+## Experiment: Convert docx to Markdown
+
+I tried this.
+
+```bash
+pandoc ../../Activity\ 1\ FOSS\ \(Teacher\).docx -o Activity_1_Teacher.raw_pandoc.md 
+```
+
+The results were not good.
+
+So I spent an hour and massaged this output into
+`materials/AliPOGILandLabs/POGILs/markdown/activity1/Activity_1_Teacher.md`.
+
+I replaced many of the tables in the source with lists in Markdown. The results
+are less consice, but convey the same meaning.
+
+## Experiment; Convert Markdown to docx
+
+So I took the massaged version of Markdown and converted it to word as follows.
+
+```bash
+pandoc Activity_1_Teacher.md -o Activity_1_Teacher.docx
+```
+
+This worked quite well.
+
+## Docx to Google Doc
+
+Any Word doc can be converted to a Google Doc by Google Drive. In fact
+you can configure Google Drive to do this automatically when you load
+Word doc.
+
+So, by converting to Word Doc, I will assume that we have also converted
+to Google Doc.
+
+## Markdown to ASCIIdoc
+
+```bash
+pandoc Activity_1_Teacher.md -o Activity_1_Teacher.adoc
+```
+
+Looks great in VSCode previewer (with AsciiDoc extension).
+
+## ASCIIdoc to Markdown
+
+This is harder. Followed instructions here: https://karinavarela.me/2020/05/06/converting-asciidoc-to-markdown/
+
+Some strange artifacts resulted.
+
+## Conclusions (so far)
+
+It appears pretty simple to convert Markdown into other formats.
+
+The reverse is not as good or easy for a couple reasons:
+
+1. Markdown is not as expressive as other formats, so you may get undesirable
+   results.
+2. pandoc cannot handle ASCIIdoc as an input format, so it requires jumping
+   through more hoops.
