@@ -1,0 +1,40 @@
+{
+    "words": [
+        "alexkaratarakis",
+        "bhermann",
+        "Braught",
+        "Clif",
+        "devcontainer",
+        "Dockerfiles",
+        "FOSS",
+        "gitattribute",
+        "gitkit",
+        "healthcheck",
+        "hfossedu",
+        "Kussmaul",
+        "Macdonell",
+        "openapi",
+        "premerge",
+        "Upstreaming",
+        "workdir"
+    ],
+    "ignorePaths": [
+        "Dockerfile",
+        "devcontainer.json",
+        ".gitattributes",
+        "*.*sh",
+        "LICENSE",
+        ".gitlab-ci.yml",
+        ".cspell.json",
+        "*.pptx",
+        "*.docx",
+        "*.patch",
+        "*.bats",
+        "*.raw",
+        "issues.json",
+        "labels.json",
+        "bats-assert/",
+        "bats-file/",
+        "bats-support"
+    ]
+}

@@ -1,0 +1,8 @@
+---
+globs:
+  - "**/*.md"
+
+ignores:
+  - "test/pinning/test_helper/bats-assert/"
+  - "test/pinning/test_helper/bats-file/"
+  - "test/pinning/test_helper/bats-support/"
