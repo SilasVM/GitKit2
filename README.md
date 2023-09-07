@@ -21,17 +21,17 @@ There is a sequence of 4 activities that cover the following topics:
 
 ### Using this Repository
 
-**Note:** One fork will support up to 25 students. If you have more than 25 students you will need to have multiple repositories.
+**Note:** One fork will support up to 32 students. If you have more than 32 students you will need to have multiple repositories.
 
 To set up this repository to use in your class, use the instructions below
-to create `https://github.com/<org>/GitKit-FarmData2` repository.
+to create a `https://github.com/<org>/GitKit-FarmData2` repository.
 You'll need Docker installed and running.
 
 1. On GitHub, identify or create the organization into which you will deploy
    GitKit. This can be your personal namespace, or it can be any organization
    that you control. You cannot deploy GitKit into the same
    namespace/organization twice. So if you want to redeploy GitKit, delete
-   the previous deployment first.
+   or rename the previous deployment first.
 
 2. On GitHub, create a classic personal access token ([directions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic)), that expires in 7-days, with the following scopes
    * repo (all)
@@ -39,7 +39,7 @@ You'll need Docker installed and running.
    * admin:org
      * read:org
 
-3. Run the following replacing `<token>` with the token you just created,
+3. Run the following command replacing `<token>` with the token you just created,
    and `<org>` with either a URL (without a trailing slash) to GitHub
    organization or username to deploy into (e.g., `https://github.com/StoneyJackson`)
    or just the org or user name (e.g., `StoneyJackson`).
@@ -55,6 +55,13 @@ You'll need Docker installed and running.
       docker run --rm -it -e GH_TOKEN=ghp_QWERTYasdf1234POIUljhxcvb registry.gitlab.com/hfossedu/kits/gitkit:latest wne-cs220-s2023
       ```
 
+4. When the deploy in step 3 completes, ensure that the "Workflow permissions" for the new `GitKit-FarmData2` repository grant the `GITHUB_TOKEN` "Read and write permissions."
+   - If you deployed to: 
+     - an organization go to the organization page in GitHub.
+     - a personal GitHub space go to the new `GitKit-FarmData2` repository page in GitHub.
+   - Open the "Settings" (the "gear" icon top right)
+   - Select "Actions" -> "General" in the left-hand menu.
+   - Click "Read and write permissions" in the "Workflow Permissions" section.
 
 #### Community and Collaboration
 
