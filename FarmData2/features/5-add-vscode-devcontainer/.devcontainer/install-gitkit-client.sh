@@ -10,6 +10,7 @@ git config --global init.defaultBranch main
 git config --global merge.conflictstyle diff3
 git config --global merge.tool vscode
 git config --global mergetool.keepbackup false
+git config --global mergetool.vscode.cmd 'code --wait $MERGED'
 
 cat "${PROJ_ROOT}/.devcontainer/bashrc-additions.sh" >> "${HOME}/.bashrc"
 
