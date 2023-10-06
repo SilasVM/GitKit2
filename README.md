@@ -241,7 +241,7 @@ The hands-on activity for topic 1 has students perform the following major tasks
 
 The following are notes on some of the specific questions in the topic 1 hands-on activity:
 
-- **Question #8c** (only if using the Linux KitClient)
+- **Question 8c** (only if using the Linux KitClient)
   
   If a student experiences difficulties getting the KitClient to start some things to try include: 
   - Ensure that Docker Desktop is installed, is running, and is working correctly by trying the following command:
@@ -251,23 +251,23 @@ The following are notes on some of the specific questions in the topic 1 hands-o
   - If an error related to port `5901` or port `6901` is reported then they likely have multiple copies of the KitClient running.  Use Docker Desktop to stop and delete the unnecessary containers.
   - Use Docker Desktop to delete the `KitClient` container the `gitkitvol` volume and all `kitclient` images.  Then follow the instructions for "Setting up and using the KitClient Linux Environment" again.
 
-- **Question #12b (Linux KitClient) / Question #11b (VSCode KitClient)**
+- **Question 12b (Linux KitClient) / Question #11b (VSCode KitClient)**
   
   Some students will try to clone the upstream `GitKit-FarmData2` repository instead of their origin repository.  A few may even attempt to clone the real `FarmData2` repository.  The Kit-tty should prevent this and provide a helpful tip.
 
-- **Question #13**
+- **Question 13**
   
   Checking the `origin` remote that is given as the answer to this question will confirm that the student has correctly cloned their origin.  Again, the Kit-tty should prevent them doing this incorrectly, but if somehow it did not catching and correcting this early is important.
   
-- **Question #15a**
+- **Question 15a**
   
   The answer to this question will reasonably differ depending upon when students complete the exercise.  There are initially 3 issues that are pre-assigned to the user that deployed the GitKit.  Students who complete the exercise early are likely to all identify these issues. As additional students claim issues, other students will identify those claimed issues as well.
   
- - **Question #15b**
+ - **Question 15b**
    
    The activity instructs students to claim an issue by commenting on it with the very specific phrase "I would like to work on this please!"  If they are the first to do so the issue will be assigned to them and they will receive a personalized message from a one of the community automations in response. If they are not the first to respond, they will also receive a message to that effect and a suggestion to try a different issue.  It is important that they use the exact message given in the assignment, otherwise the community automation will not recognize and respond to the question.
 
-- **Question #19**
+- **Question 19**
   
   Some students will attempt to clone the project that they select while they are inside the `GitKit-FarmData2` repository that they already cloned.  If they do attempt this the Kit-tty should intervene, prevent the action and respond with a helpful message.
 
@@ -332,19 +332,19 @@ The hands-on activity for topic 2 has students perform the following major tasks
 
 The following are notes on some of the specific questions in the topic 2 hands-on activity:
 
-- **Question #2b**
+- **Question 2b**
 
   The date of the most recent commit should be the date on which the GitKit was deployed. The third most recent commit should be authored by "Batese2001" and have the commit message "Summary Table Timing and No Log Messages (#289)."  If a student's answer doe not agree with this, then it is likely that they created their fork, after the presentation of the third Topic.  There is not necessarily a reason for concern for this activity, however this may create issues for future activities.  Each of those activities have instructions for resolving the issues and are noted below in Topic 3 and 4.
 
-- **Question #9a**
+- **Question 9a**
 
   The `git status` command here should show one untracked file with modifications and that file should agree with the file that they identified in question #8a.
 
-- **Question #16**
+- **Question 16**
 
   This question is a good checkpoint to ensure that they have done things correctly to this point.  The most recent commit in the `git log` output should show that they committed changes to the correct file (i.e. the one from #8a) and that they have used a meaningful commit message.
 
-- **Question #24**
+- **Question 24**
 
   The instructor can use the link provided here to check the students' pull requests for several points:
   - All of the "Round 1" issues have been created such that the do not conflict.  Thus, every pull request for a "Round 1" issue should be able to be merged automatically.  If a given pull request cannot be merged automatically, a comment can be added to the student's pull request with suggestions on how to correct the issue.
@@ -417,19 +417,19 @@ The hands-on activity for topic 3 has students perform the following major tasks
 
 The following are notes on some of the specific questions in the topic 3 hands-on activity:
 
-- **Question #3a**
+- **Question 3a**
 
   If a student begins the GitKit activities late they may make their fork and clone after the "Round 1" issues have been merged. This will result in their origin mai branch not being _behind_ the upstream main branch.  The directions in Appendix A of the activity have them reset the `HEAD` of their main branch to the commit before any "Round 1" issues were merged. Once they force push this change to their origin they will then see that their main branch is behind the upstream main.
 
-- **Question #3e**
+- **Question 3e**
 
   It is a good idea to check here that the student's upstream remote point to the correct `GitKit-FaramData2` repository.  The Kit-tty should have caught this error and direct students on the correct way to set the upstream remote. However, some students have accidentally set their upstream to their origin or to the real `FarmData2` repository.
 
-- **Question #9b**
+- **Question 9b**
  
   After synchronizing with the upstream, the students go on to find a "Round2" ticket in the issue tracker. There are only 4 "Round2" issues, so multiple students will be working on each one.  This question requests that they comment on the issue they want to work on but should spread themselves across the available "Round 2" issues.
 
-- **Questions #12-12**
+- **Questions 10-12**
 
   These questions ask the student to use the forking workflow to create a fix for the "Round 2" ticket on which they chose to work. Github will indicate that the PRs created by each student for their "Round 2" issue can be merged automatically.  This is because even though multiple students are working on each "Round 2" issue, none of them will have been merged into the upstream main.
 
@@ -465,11 +465,12 @@ Topic 4 then focuses on the resolution of merge conflicts.  The concepts of _mer
   
   Some additional practice exercises with identifying non-conflicting and conflicting changes, and merging the results.  These activities can be done and discussed in small groups during class if time permits. 
 
--**Slide 17**
+- **Slide 17**
 
   Establishes the basis for how developers (i.e. the students) will resolve merge conflicts.  While a maintainer could resolve the conflict, more typically the developer who submitted the PR will be expected to resolve any merge conflicts in their PR.  
   
 - **Slide 18**
+
   The way that a developer will resolve a merge conflicts is to pull the (conflicting) changes to the upstream main to their local repository. They then merge the main branch into their feature branch. They then push their updated feature branch to their origin, which updates the PR.  By updating the PR the maintainers are now able to review not only the proposed changes but also the way that the merge conflicts were resolved. 
 
   Note that this is backwards from what was done earlier, where the maintainer was merging the feature branch into the main branch. The rule that developers "only commit to feature branches" can be used as a grounding for why developers do the merge in this direction.
@@ -511,19 +512,19 @@ The hands-on activity for topic 4 has students perform the following major tasks
 
 In this activity students synchronize with the upstream to get the conflicting changes that were merged by the `addRound2Conflicts` branch. They then merge those changes into their feature branch creating a conflict.  They use a merge tool to resolve the conflict and then push the changes to their origin to update their pull request.  Their goal is to have their pull requests updated so that they again are able to be merged automatically.  There is ultimately no need to merge these pull requests.
 
-- **Question #2(e,f)**
+- **Question 2(e,f)**
   
   In this exercise there are no conflicting changes and the merge would be able to be completed automatically.  However, if all of the non-conflicting changes are merged into the result the program will not produce the correct result.  The point being that automatic merges can check for structural conflicts, but not logical or semantic conflicts and thus caution should be used when performing merges.
 
-- **Question #6**
+- **Question 6**
 
   Inevitably some students will be behind on their work and will complete their sync with upstream main after you have merged the PR for the `addRound2Conflicts` branch.  In these cases, their pull requests will not create a conflict to be resolved.  These students should follow the instructions given in Appendix A.  These directions have them pull the `mergeConflictPractice` branch and create a pull request for it.  That branch contains conflicts with those introduced in the `addRound2Conflicts` branch.  So they can then complete the activity using the `mergeConflictPractice` branch as it it were their original feature branch. Students not in this situation, but who would like additional practice can also pull and use the `mergeConflictPractice` branch at the end of the activity.
 
-- **Question #14(a,b)**
+- **Question 14(a,b)**
 
   By default, VS Code does not display the best common ancestor in its merge tool. The steps given in these questions has the students change the VS Code configuration such that it includes the best common ancestor.
 
-- **Question #22**
+- **Question 22**
 
   This question is optional.  If the student did not need to use the `merge-conflict-practice` branch in question #6, then they can use it at this point for additional practice with resolving merge conflicts.
 
