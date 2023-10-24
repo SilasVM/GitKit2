@@ -8,11 +8,11 @@ mocked: gh repo create /GitKit-FarmData2 --public
 mocked: git remote add origin https://@github.com//GitKit-FarmData2
 mocked: git switch main
 mocked: git switch -c merge-conflict-practice
-mocked: git am /w/FarmData2/features/5-add-conflicts-for-merge-conflict-practice/0001-Conflicts-for-merge-conflict-practice.patch
+mocked: git am /w/features/5-add-conflicts-for-merge-conflict-practice/0001-Conflicts-for-merge-conflict-practice.patch
 mocked: git switch main
 mocked: git switch main
 mocked: git switch -c add-round-two-conflicts
-mocked: git am /w/FarmData2/features/5-add-round-two-conflicts/0001-Changes-that-conflict-with-Round2-Issues.patch
+mocked: git am /w/features/5-add-round-two-conflicts/0001-Changes-that-conflict-with-Round2-Issues.patch
 mocked: git switch main
 mocked: git reset --soft d622e8d6d71e27890c73e2428e6dcf9d44ca606e
 mocked: git add .
