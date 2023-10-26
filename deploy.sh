@@ -106,7 +106,7 @@ install-features() {
     (
         mkdir -p "${KIT_DIR}"
         cp -R features "${KIT_DIR}"
-
+        
         for f in "${KIT_DIR}"/features/* ; do
         (
             cd "${f}"
@@ -146,7 +146,9 @@ push() {
 
 post-push-install-features() {
     (
-        for f in "${KIT_DIR}"/features/* ; do
+        cp -R kitSpecificFeatures "${KIT_DIR}"
+
+        for f in "${KIT_DIR}"/kitSpecificFeatures/* ; do
         (
             cd "${f}"
             test ! -e ./post-push-install-into-instance.sh || ./post-push-install-into-instance.sh
