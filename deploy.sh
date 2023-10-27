@@ -94,9 +94,11 @@ pre-install-features() {
     (
         cp -R features "${KIT_DIR}"
 
-        for f in features/* ; do
+        features=($(yq '.pre-install-features' config.yaml))
+        for i in "${features[@]}" ; do
         (
-            test ! -e "${f}/pre-install-into-instance.sh" || "${f}/pre-install-into-instance.sh"
+            test ! -e "./$i" || "./$i"
+
         )
         done
     )
@@ -107,10 +109,11 @@ install-features() {
         mkdir -p "${KIT_DIR}"
         cp -R features "${KIT_DIR}"
         
-        for f in "${KIT_DIR}"/features/* ; do
+        features=($(yq '.install-features' config.yaml))
+        for i in "${features[@]}" ; do
         (
-            cd "${f}"
-            test ! -e ./install-into-instance.sh || ./install-into-instance.sh
+            test ! -e "./$i" || "./$i"
+
         )
         done
     )
@@ -127,10 +130,11 @@ commit() {
 
 post-commit-install-features() {
     (
-        for f in "${KIT_DIR}"/features/* ; do
+        features=($(yq '.post-commit-install-features' config.yaml))
+        for i in "${features[@]}" ; do
         (
-            cd "${f}"
-            test ! -e ./post-commit-install-into-instance.sh || ./post-commit-install-into-instance.sh
+            test ! -e "./$i" || "./$i"
+
         )
         done
     )
@@ -148,10 +152,11 @@ post-push-install-features() {
     (
         cp -R kitSpecificFeatures "${KIT_DIR}"
 
-        for f in "${KIT_DIR}"/kitSpecificFeatures/* ; do
+        features=($(yq '.post-push-install-features' config.yaml))
+        for i in "${features[@]}" ; do
         (
-            cd "${f}"
-            test ! -e ./post-push-install-into-instance.sh || ./post-push-install-into-instance.sh
+            test ! -e "./$i" || "./$i"
+
         )
         done
     )
