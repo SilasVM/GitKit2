@@ -1,0 +1,27 @@
+---
+TARGET_REPO: "https://github.com/DickinsonCollege/FarmData2.git"
+TARGET_COMMIT : "d622e8d6d71e27890c73e2428e6dcf9d44ca606e"
+
+#General Features
+pre-install-features:
+  features/5-add-conflicts-for-merge-conflict-practice/pre-install-into-instance.sh
+  features/5-add-round-two-conflicts/pre-install-into-instance.sh
+
+install-features:
+  features/5-add-vscode-devcontainer/install-into-instance.sh
+  features/5-allow-anyone-to-self-assign-an-issue/install-into-instance.sh
+  features/5-detect-upstream-clone/install-into-instance.sh
+  features/5-prevent-clone-inside-another-repo/install-into-instance.sh
+  features/5-prevent-merge-into-self/install-into-instance.sh
+  features/5-prevent-pull-from-upstream-main-into-non-main/install-into-instance.sh
+  features/5-prevent-remote-to-non-upstream/install-into-instance.sh
+  features/8-git-shim/install-into-instance.sh
+
+post-commit-install-features:
+  features/5-add-conflicts-for-merge-conflict-practice/post-commit-install-into-instance.sh
+  features/5-add-round-two-conflicts/post-commit-install-into-instance.sh
+  
+#KitSpecific features
+post-push-install-features:
+  kitSpecificFeatures/6-create-labels/post-push-install-into-instance.sh
+  kitSpecificFeatures/7-create-issues/post-push-install-into-instance.sh
