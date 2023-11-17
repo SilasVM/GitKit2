@@ -6,18 +6,20 @@ SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && 
 
 DEFAULT_PREFIX=GitKit-
 export KIT_PROJECT_PREFIX="${KIT_PROJECT_PREFIX:-${DEFAULT_PREFIX}}"
-export TARGET_ORG="${1}"
+export KIT_CONFIG_PATH="${KIT_CONFIG_PATH:-.kit_deploy_config.yaml}"
 
 export PROJ_DIR="${SCRIPT_DIR}"
 export REPO_DIR="${SCRIPT_DIR}/repository"
 export KIT_DIR="${SCRIPT_DIR}/repository/.kit"
 
-TARGET_REPO="$(yq '.TARGET_REPO' config.yaml)"
-TARGET_COMMIT="$(yq '.TARGET_COMMIT' config.yaml)"
+TARGET_REPO=""
+TARGET_COMMIT=""
 export TARGET_REPO
 export TARGET_COMMIT
 
 deploy() {
+    clone_kit
+    load_config "kit/$KIT_CONFIG_PATH"
     clone "$TARGET_REPO"
     identify-as "kit" "kit@example.com"
     remove-remote origin
@@ -32,6 +34,18 @@ deploy() {
     post-push-install-features
 }
 
+clone_kit() {
+    (
+        git clone "$KIT_URL" kit
+    )
+}
+
+load_config(){
+    (
+        TARGET_REPO="$(yq '.TARGET_REPO' "$1")"
+        TARGET_COMMIT="$(yq '.TARGET_COMMIT' "$1")"
+    )
+}
 clone() {
     (
         mkdir -p "${REPO_DIR}"
@@ -70,7 +84,7 @@ create-remote() {
     (
         cd "${REPO_DIR}"
         local org
-        org="$(get-org-name "${TARGET_ORG}")"
+        org="$(get-org-name "${KIT_TARGET_ORG}")"
         local proj
         proj="$(get-project-name)"
         gh repo create "${org}/${KIT_PROJECT_PREFIX}${proj}" --public
