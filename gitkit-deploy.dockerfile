@@ -9,4 +9,4 @@ RUN git config --global http.postBuffer 157286400
 
 WORKDIR /gitkit
 COPY . ./
-ENTRYPOINT ["./deploy.sh"]
+ENTRYPOINT ["deploy.sh"]
