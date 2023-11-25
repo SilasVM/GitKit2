@@ -1,1 +1,0 @@
-test/pinning/test.bash

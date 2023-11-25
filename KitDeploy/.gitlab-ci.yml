@@ -1,7 +1,0 @@
-include:
-  - remote: https://gitlab.com/LibreFoodPantry/common-services/tools/pipeline/-/raw/main/source/gitlab-ci/pipeline.yml
-
-variables:
-  PIPELINE_IMAGE_PLATFORMS: "linux/amd64,linux/arm64"
-  IMAGE_NAME: "gitkit"
-  DISABLE_JOBS: "megalinter,lint-package-json"
