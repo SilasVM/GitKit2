@@ -9,7 +9,7 @@ cd "${REPO_DIR}"
 set -e
 
 i=0
-o="$(yq ".[${i}]" < issues.json)"
+o="$(yq ".[${i}]" < "${SCRIPT_DIR}/issues.json")"
 
 while [[ "$o" != "null" ]] ; do
     title="$(echo "$o" | yq '.title')"
@@ -28,5 +28,5 @@ while [[ "$o" != "null" ]] ; do
 
     sleep 3
     ((++i))
-    o="$(yq ".[${i}]" < issues.json)"
+    o="$(yq ".[${i}]" < "${SCRIPT_DIR}/issues.json")"
 done
