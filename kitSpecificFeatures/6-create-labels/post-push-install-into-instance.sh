@@ -8,8 +8,8 @@ cd "${REPO_DIR}"
 
 set -e
 
-yq '.[].color' < labels.json > colors.txt
-yq '.[].name' < labels.json > names.txt
+yq '.[].color' < "${SCRIPT_DIR}/labels.json" > colors.txt
+yq '.[].name' < "${SCRIPT_DIR}/labels.json"  > names.txt
 paste names.txt colors.txt > names-colors.txt
 
 IFS=$'\t'
