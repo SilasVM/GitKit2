@@ -44,7 +44,7 @@ __Topic 1. Community and Collaboration:__ [[Slides](./materials/slides/1-S-Commu
    - Introduces Free and Open Source Software (FOSS) communities, and how they collaborate using version control (e.g. git) and repository hosting (e.g. GitHub).
    - Provides hands-on practice with the _issue tracker_, and _forking_ and _cloning_ of a repository.
 
-__Topic 2. Working Local & Upstreaming:__ [[Slides](./materials/slides/2-S-WorkingLocallyAndUpstreaming.pptx?raw=true) | [Activity](./materials/activities/2-A-WorkiongLocallyAndUpstreaming.docx?raw=true)]
+__Topic 2. Working Local & Upstreaming:__ [[Slides](./materials/slides/2-S-WorkingLocallyAndUpstreaming.pptx?raw=true) | [Activity](./materials/activities/2-A-WorkingLocallyAndUpstreaming.docx?raw=true)]
    - Introduces feature branches, commits, and pull requests as part of the forking workflow.
    - Provides practice with creating and switching _branches_, _staging_ and _committing_ changes, _pushing_ branches to origin and submitting _pull requests_.
 
