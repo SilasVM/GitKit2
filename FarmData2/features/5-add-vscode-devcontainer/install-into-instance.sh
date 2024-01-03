@@ -7,5 +7,5 @@ SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && 
 
 set -e
 
-cp -r "$SCRIPT_DIR/.devcontainer" "$REPO_DIR"
-chmod +x "$REPO_DIR/.devcontainer/install-gitkit-client.sh"
+cp "$SCRIPT_DIR/.gitpod.yml" "$REPO_DIR"
+cp -r "$SCRIPT_DIR/.vscode" "$REPO_DIR"
