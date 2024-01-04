@@ -12,8 +12,11 @@ The GitKit introduces students to the fundamental skills and concepts (including
   - [The Kit-tty](#the-kit-tty) - Information about the Kit-tty virtual assistant.
   - [Community Automations](#community-automations) - Information about the simulated community interactions.
 - [Deploying the GitKit](#deploying-the-gitkit) - Overview of what instructors and students must do to deploy and use the GitKit.
-  - [Deploy Prerequisites](#deploy-prerequisites) - Dependencies for an instructor wanting to deploy the GitKit.
-  - [Deploy Instructions](#deploy-instructions) - Step-by-step instructions for an instructor deploying the GitKit.
+  - [Deploy Requirements](#deploy-requirements) - Dependencies for an instructor wanting to deploy the GitKit.
+  - [Deploy the Upstream Repository](#deploy-the-upstream-repository) - Step-by-step instructions for an instructor deploying the upstream
+  repository.
+  - [Configure the Upstream Repository](#configure-the-upstream-repository) - Step-by-step instructions for
+  an instructor to configure the upstream repository.
 - [Instructor Notes](#instructor-notes) - Notes providing information and tips for the classroom delivery of each topic.
   - [Topic 1: Community and Collaboration](#topic-1-community-and-collaboration)
     - [Topic 1 Synopsis](#topic-1-synopsis)
@@ -102,48 +105,63 @@ For example:
 
 ## Deploying the GitKit
 
-In order to use the GitKit faculty must deploy it. Deploying the GitKit will create the `GitKit_FarmData2` repository that students will use as the upstream repository for the hands-on GitKit activities.  This repository will contain the code, documentation and history from the FarmData2 project and will have an issue tracker that is populated with the tickets used in the activities. It will also be specially configured to interact with the KitClient to configure the Kit-tty and to provide the community automations.
+To use the GitKit faculty must deploy it. Deploying the GitKit creates a repository that students use as the upstream repository for the hands-on GitKit activities.  This repository contains the code, documentation and history from the FarmData2 project and has an issue tracker that is populated with the tickets used in the activities. It is also configured to interact with the KitClient to install the Kit-tty and to provide community automations.
 
-**Important Note:** Each deployment supports up to 32 students. If you have more than 32 students you will need to perform multiple deploys and direct sub-sets of students to each upstream repository. If multiple deployments are needed you will need to create a GitHub organization for each deployment.
+**Important Note:** Each deployment supports up to 32 students. If you have more than 32 students you will need to perform multiple deploys and direct sub-sets of students to each upstream repository.
 
-### Deploy Prerequisites
+### Deploy Requirements
 
-Docker is required to deploy the GitKit.  Instructions for installing Docker Desktop can be found on the [Overview of Docker Desktop](https://docs.docker.com/desktop/) page.
+* [Docker](https://www.docker.com/) - Docker Desktop must be installed and running.
+* [GitHub](https://github.com/) - A free account is sufficient
 
-### Deploy Instructions
+### Deploy the Upstream Repository
 
-Once you have Docker installed, the following steps will deploy a GitKit-FarmData2 repository in a GitHub space that you specify.
+In a machine running Docker, open a terminal and run the command below
 
-1. On GitHub, identify or create the GitHub location into which you wish to deploy
-   the GitKit. This can be your personal namespace, or it can be any organization
-   that you control.
-   - **NOTE:** If you need multiple GitKit deploys, create one (using these instructions) and then rename the repository (e.g. `GitKit_FarmData2_1`). Then follow these instructions again to deploy each additional `GitKit_FarmData2` repository.  Similarly, if you are deploying in a subsequent semester, you will need to rename or delete any prior `GitKit_FarmData2` repository.
+```bash
+docker run --rm -it -e GH_TOKEN=<token> -e REPO_NAME=<repo> registry.gitlab.com/hfossedu/kits/gitkit:latest <org>
+```
 
-2. On GitHub, create a classic personal access token ([directions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic)), that expires in 7-days, with the following scopes
-   * repo (all)
-   * workflow
-   * admin:org
-     * read:org
+with the following substitutions:
 
-3. Run the following command replacing `<token>` with the personal access token you just created, and `<org>` with either a URL (without a trailing slash) to GitHub organization or username to deploy into (e.g., `https://github.com/yourOrganizaion`) or alternatively you may use just the org or user name (e.g., `yourUsername`).
+* `<org>`: Either your personal namespace or an organization that you have created or have permissions to create repositories within.
+* `<repo>`: The name for the new repository (your choice).
+* `<token>`: A (classic) personal access token. To get one, navigate to
+    <https://github.com/settings/tokens/new> and generate one with the
+    following scopes:
+    * repo (all)
+    * workflow
+    * read:org (under admin:org)
 
-   ```bash
-   docker run --rm -it -e GH_TOKEN=<token> registry.gitlab.com/hfossedu/kits/gitkit:latest <org>
-   ```
+#### Example
 
-   For example, the following would (if the token were valid) deploy the GitKit into the `wne-cs220-s2023` organization.
+Suppose you want to deploy GitKit into an organization named `wne-cs220-s2023`
+that you created for your course. And you want the new repository named
+`GitKit-FarmData2`. You navigate to <https://github.com/settings/tokens/new>
+and generate an appropriate token and copy it. The you open a terminal
+and run the following:
 
-   ```bash
-   docker run --rm -it -e GH_TOKEN=ghp_QWERTYasdf1234POIUljhxcvb registry.gitlab.com/hfossedu/kits/gitkit:latest wne-cs220-s2023
-   ```
+```bash
+docker run --rm -it -e GH_TOKEN=ghp_QWERTYasdf1234POIUljhxcvb -e REPO_NAME=GitKit-FarmData2 registry.gitlab.com/hfossedu/kits/gitkit:latest wne-cs220-s2023
+```
 
-4. When the deploy in step 3 completes, ensure that the "Workflow permissions" for the new `GitKit-FarmData2` repository grant the `GITHUB_TOKEN` "Read and write permissions."
-   - If you deployed to:
-     - an organization, then go to the organization page in GitHub.
-     - a personal GitHub space, then go to the new `GitKit-FarmData2` repository page in GitHub.
-   - Open the "Settings" (the "gear" icon top right)
-   - Select "Actions" -> "General" in the left-hand menu.
-   - Click "Read and write permissions" in the "Workflow Permissions" section.
+### Configure the Upstream Repository
+
+To enable the community automations, you need to ensure that "Workflow permissions"
+for the new repository grant the `GITHUB_TOKEN` the "Read and write permissions".
+
+Where you set these permissions depends on whether you deployed into your personal namespace or an organization.
+
+* If you deployed to an **organization**, navigate to that organization page
+  on GitHub.
+* If you deployed into your **personal namespace**, navigate to the new repository
+  on GitHub.
+
+Now that you are on the correct page, do the following.
+
+1. Open the "Settings" (the "gear" icon top right)
+2. Select "Actions" -> "General" in the left-hand menu.
+3. Click "Read and write permissions" in the "Workflow Permissions" section.
 
 ## Instructor Notes
 
