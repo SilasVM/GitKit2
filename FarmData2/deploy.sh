@@ -4,6 +4,7 @@ set -e
 
 SCRIPT_DIR="$( cd -- "$( dirname -- "${BASH_SOURCE[0]:-$0}"; )" &> /dev/null && pwd 2> /dev/null; )"
 
+export REPO_NAME="${REPO_NAME:=GitKit-FarmData2}"
 export TARGET_ORG="${1}"
 export PROJ_DIR="${SCRIPT_DIR}"
 export REPO_DIR="${SCRIPT_DIR}/repository"
@@ -69,10 +70,8 @@ create-remote() {
         cd "${REPO_DIR}"
         local org
         org="$(get-org-name "${TARGET_ORG}")"
-        local proj
-        proj="$(get-project-name)"
-        gh repo create "${org}/${KIT_PROJECT_PREFIX}${proj}" --public
-        git remote add origin "https://${GH_TOKEN}@github.com/${org}/${KIT_PROJECT_PREFIX}${proj}"
+        gh repo create "${org}/${REPO_NAME}" --public
+        git remote add origin "https://${GH_TOKEN}@github.com/${org}/${REPO_NAME}"
     )
 }
 
@@ -82,10 +81,6 @@ get-org-name() {
     n="${n##*github.com/}"
     n="${n%.git}"
     echo "$n"
-}
-
-get-project-name() {
-    basename "${PROJ_DIR}"
 }
 
 pre-install-features() {
