@@ -109,41 +109,24 @@ To use the GitKit faculty must deploy it. Deploying the GitKit creates a reposit
 
 **Important Note:** Each deployment supports up to 32 students. If you have more than 32 students you will need to perform multiple deploys and direct sub-sets of students to each upstream repository.
 
+Below is a streamlined set of instructions for deploying the GitKit.
+If they don't fit your needs, there are [more comprehensive deploy
+instructions here](./docs/deploy.md).
+
 ### Deploy Requirements
 
-* [Docker](https://www.docker.com/) - Docker Desktop must be installed and running.
-* [GitHub](https://github.com/) - A free account is sufficient
+To deploy GitKit, you'll need accounts on the following services:
+
+* [GitHub](https://github.com/) - A free account is sufficient.
+* [GitPod](https://gitpod.io/) - A free account is sufficient.
 
 ### Deploy the Upstream Repository
 
-In a machine running Docker, open a terminal and run the command below
+Click the "Open in GitPod" link below to run the deployer.
+It will gather some information from you and then create the upstream
+repository on GitHub.
 
-```bash
-docker run --rm -it -e GH_TOKEN=<token> -e REPO_NAME=<repo> registry.gitlab.com/hfossedu/kits/gitkit:latest <org>
-```
-
-with the following substitutions:
-
-* `<org>`: Either your personal namespace or an organization that you have created or have permissions to create repositories within.
-* `<repo>`: The name for the new repository (your choice).
-* `<token>`: A (classic) personal access token. To get one, navigate to
-    <https://github.com/settings/tokens/new> and generate one with the
-    following scopes:
-    * repo (all)
-    * workflow
-    * read:org (under admin:org)
-
-#### Example
-
-Suppose you want to deploy GitKit into an organization named `wne-cs220-s2023`
-that you created for your course. And you want the new repository named
-`GitKit-FarmData2`. You navigate to <https://github.com/settings/tokens/new>
-and generate an appropriate token and copy it. The you open a terminal
-and run the following:
-
-```bash
-docker run --rm -it -e GH_TOKEN=ghp_QWERTYasdf1234POIUljhxcvb -e REPO_NAME=GitKit-FarmData2 registry.gitlab.com/hfossedu/kits/gitkit:latest wne-cs220-s2023
-```
+[![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/?autostart=true#https://github.com/hfossedu/gitkit-deployer-gitpod)
 
 ### Configure the Upstream Repository
 
