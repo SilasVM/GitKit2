@@ -9,6 +9,8 @@ tasks:
         chmod +x /home/gitpod/.local/lib/kitclient/src/install-kit-features-into-client.sh
         sudo ln -s /home/gitpod/.local/lib/kitclient/src/install-kit-features-into-client.sh /usr/share/git-core/templates/hooks/post-checkout
         cat /home/gitpod/.local/lib/kitclient/src/bashrc.additions >> /home/gitpod/.bashrc
+        mkdir -p "$HOME/.kitclient"
+        git config --global user.name > "$HOME/.kitclient/kituser.txt"
         git config --global --add safe.directory "${PROJ_ROOT}"
         git config --global pull.ff only
         # git config --global credential.helper store
