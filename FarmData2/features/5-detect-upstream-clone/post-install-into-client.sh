@@ -71,16 +71,34 @@ function remove-prefix-http() {
 }
 
 function display-error-message() {
-    echo "*********************************************************************"
-    printf "\xF0\x9F\x98\xBA\xF0\x9F\x92\xBB Meow, Kit-tty here!\n"
-    echo
-    echo "Oops, I think you have cloned the upstream repository instead of your"
-    echo "fork. But don't worry. You can fix it!"
-    echo
-    echo "1. Delete your local repository."
-    echo "2. Navigate to your fork on GitHub and copy its clone URL."
-    echo "3. Clone your fork using its clone URL."
-    echo "*********************************************************************"
+    if [ -n "$GITPOD_WORKSPACE_ID" ] ; then
+        echo "*********************************************************************"
+        printf "\xF0\x9F\x98\xBA\xF0\x9F\x92\xBB Meow, Kit-tty here!\n"
+        echo
+        echo "Oops, I think you have cloned the upstream repository instead of your"
+        echo "fork. But don't worry. You can fix it!"
+        echo
+        echo "Before you do anything, take a screenshot of the instructions below"
+        echo "so you can refer to them later."
+        echo
+        echo "1. Stop this GitPod workspace (which is connected to upstream)."
+        echo "2. If you haven't done so, fork the upstream repository."
+        echo "3. Navigate to your fork on GitHub and copy its URL."
+        echo "4. Navigate to gitpod.io and create a new workspace using your"
+        echo "   fork's URL."
+        echo "*********************************************************************"
+    else
+        echo "*********************************************************************"
+        printf "\xF0\x9F\x98\xBA\xF0\x9F\x92\xBB Meow, Kit-tty here!\n"
+        echo
+        echo "Oops, I think you have cloned the upstream repository instead of your"
+        echo "fork. But don't worry. You can fix it!"
+        echo
+        echo "1. Delete your local repository."
+        echo "2. Navigate to your fork on GitHub and copy its clone URL."
+        echo "3. Clone your fork using its clone URL."
+        echo "*********************************************************************"
+    fi
 }
 
 main
