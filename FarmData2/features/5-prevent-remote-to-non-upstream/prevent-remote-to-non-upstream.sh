@@ -52,16 +52,16 @@ if [ "$2" = "add" ] && [ "$3" = "upstream" ] ; then
         echo "I think you have the wrong URL for 'upstream'."
         echo "One of the following is probably the problem:"
         echo
-        echo "  * The URL points to your fork."
-        echo "  * The URL points to the original, real project."
-        echo "  * The URL is not an appropriate clone URL (it should end in .git)."
-        echo "  * The URL is not using HTTPS."
+        echo "  * The URL you gave points to your fork."
+        echo "  * The URL you gave points to the original, real project."
+        echo "  * The URL you gave does not end in .git ."
+        echo "  * The URL you gave does not start with https:// ."
         echo
         echo "To get the correct URL, in a Web-browser:"
         echo
         echo "  1. Navigate to your fork"
         echo "  2. Click the link near the top that follows 'forked from'."
-        echo "  3. Click the 'Code' pill."
+        echo "  3. Click the 'Code' button."
         echo "  4. Select 'Local' and 'HTTPS'"
         echo "  5. Click the copy button."
         echo
