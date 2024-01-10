@@ -165,7 +165,7 @@ This topic introduces students to Free and Open Source Software (FOSS), FOSS com
 
 - **Slide 2**
 
-  The [Grandma Mae _Cookie Video_](https://www.youtube.com/watch?v=Tyd0FO0tko8 ) provides a good working metaphor for how FOSS collaboration works.  Students are asked to identify key FOSS vocabulary terms from this video.  Of that vocabulary, the following terms are most essential and are useful to refer back to through the remainder of the GitKit materials. The discussion following the video should ensure that they are clearly defined:
+  The [Grandma Mae _Cookie Video_](https://www.youtube.com/watch?v=upxUAI-fAtE) provides a good working metaphor for how FOSS collaboration works.  Students are asked to identify key FOSS vocabulary terms from this video.  Of that vocabulary, the following terms are most essential and are useful to refer back to through the remainder of the GitKit materials. The discussion following the video should ensure that they are clearly defined:
   - Roles - captures the idea that different project community members have different responsibilities.  Two of the key roles mentioned are:
     - Maintainer - (e.g. Grandma Mae) - a trusted community member that has write access to the definitive version of the project (i.e. the main branch / upstream).
     - Contributor - (e.g. Aunt Maria, Uncle Miles) - a community member who is helping the project in some way (i.e. is upstreaming), but does not have write access to the upstream. They contribute to the project through discussion, documentation, proposing changes, providing code that fixes bugs or implements features, and many other ways.
