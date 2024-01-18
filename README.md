@@ -216,7 +216,7 @@ This topic introduces students to Free and Open Source Software (FOSS), FOSS com
 
 #### Topic 1 Instructor To-Do List
 
-1. [Deploy the GitKit](#deploying-the-gitkit)) several days before it is needed to ensure that everything is in order.  Remember that each deploy will support up to 32 students. If more than 32 students need to be supported you will need to use multiple deploys.
+1. [Deploy the GitKit](#deploying-the-gitkit) several days before it is needed to ensure that everything is in order.  Remember that each deploy will support up to 32 students. If more than 32 students need to be supported you will need to use multiple deploys.
 
 2. Download the [Activity 1 document](./materials/activities/1-A-CommunityAndCollaboration.docx?raw=true) that will be distributed to students and edit it as follows:
    - Insert the URL of the `GitKit-FarmData2` upstream repo in place of the yellow highlighted text "Place URL of your deployed GitKit repository here!" that appears in the "Forking FarmData2" section.  If you are using multiple deployments, you may elect to distribute the different URL's to your students using an LMS or some other mechanism.
