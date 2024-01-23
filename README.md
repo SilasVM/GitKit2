@@ -200,7 +200,7 @@ This topic introduces students to Free and Open Source Software (FOSS), FOSS com
 
   The GitKit uses sequences of diagrams to visualize key concepts and processes related to the use of git and GitHub and the forking workflow. Diagrams in the same style are used throughout all of the GitKit topics. A key to success with the GitKit, for both faculty and students, is understanding these diagrams and being able to connect what they depict to the git / GitHub commands used in the forking workflow.
 
-  The first series of diagrams show the relationship between the three copies of a FOSS project's repository that a developer interacts with (upstream, origin and local). They also illustrate the connection between these three copies and the git and GitHub commands that create them (fork and clone).  A distinction is also made between _remote_ copies of the repository, those residing in the cloud (the upstream and origin), and the _local_ copy that resides in the student's devlopment environment.  Note, that when using a KitClient the development environment is running via GitPod and not on the student's physical machine.  This can be a source of confusion and it is worth spending some time clarifiying this relationship.
+  The first series of diagrams show the relationship between the three copies of a FOSS project's repository that a developer interacts with (upstream, origin and local). They also illustrate the connection between these three copies and the git and GitHub commands that create them (fork and clone).  A distinction is also made between _remote_ copies of the repository, those residing in the cloud (the upstream and origin), and the _local_ copy that resides in the student's development environment.  Note, that when using a KitClient the development environment is running via GitPod and not on the student's physical machine.  This can be a source of confusion and it is worth spending some time clarifying this relationship.
 
   The hands-on activities provide detailed instructions for creating a fork in GitHub, starting the KitClient and creating a local clone.  However, if time allows it may be also be helpful to demonstrate these actions in class.
 
@@ -220,9 +220,9 @@ This topic introduces students to Free and Open Source Software (FOSS), FOSS com
 
 2. Download the [Activity 1 document](./materials/activities/1-A-CommunityAndCollaboration.docx?raw=true) that will be distributed to students and edit it as follows:
    - Insert the URL of the `GitKit-FarmData2` upstream repo in place of the yellow highlighted text "Place URL of your deployed GitKit repository here!" that appears in the "Forking FarmData2" section.  If you are using multiple deployments, you may elect to distribute the different URL's to your students using an LMS or some other mechanism.
-   - Delete one of the highlighted sections depending upon the KitCient your students are using:
+   - Delete one of the highlighted sections depending upon the KitClient your students are using:
      - Linux KitClient Setup (highlighted in green)
-     - VSCode KitClient Setup (highlighted in fuschia)
+     - VSCode KitClient Setup (highlighted in fuchsia)
 
 #### Topic 1 Activity Notes
 
@@ -266,7 +266,7 @@ This topic focuses on the upstreaming process.  Students learn about feature bra
 
 - **Slide 3**
 
-  Reviews the simplified workflow introduced in the previous topic.  It should be re-emphasized that this is a simplified view and that this topic is about "unsimplifying" this view by filling in the details.  The figure on this slide, shows a situation where a contributor has made changes to their local repository that they want to upstream.
+  Reviews the simplified workflow introduced in the previous topic.  It should be re-emphasized that this is a simplified view and that this topic is about "un-simplifying" this view by filling in the details.  The figure on this slide, shows a situation where a contributor has made changes to their local repository that they want to upstream.
 
 - **Slide 4**
 
@@ -406,7 +406,7 @@ The following are notes on some of the specific questions in the topic 3 hands-o
 
 - **Question 3e**
 
-  It is a good idea to check here that the student's upstream remote point to the correct `GitKit-FaramData2` repository.  The Kit-tty should have caught this error and direct students on the correct way to set the upstream remote. However, some students have accidentally set their upstream to their origin or to the real `FarmData2` repository.
+  It is a good idea to check here that the student's upstream remote point to the correct `GitKit-FarmData2` repository.  The Kit-tty should have caught this error and direct students on the correct way to set the upstream remote. However, some students have accidentally set their upstream to their origin or to the real `FarmData2` repository.
 
 - **Question 9b**
 
@@ -477,9 +477,9 @@ Topic 4 then focuses on the resolution of merge conflicts.  The concepts of _mer
 #### Topic 4 Instructor To-Do List
 
 1. Download the [Activity 4 document](./materials/activities/4-A-MergeConflicts.docx?raw=true) that will be distributed to students and edit it as follows:
-   - Delete one of the highlighted sections depending upon the KitCient your students are using:
+   - Delete one of the highlighted sections depending upon the KitClient your students are using:
      - Linux KitClient - Opening the Mergetool (highlighted in green)
-     - VSCode KitClient - Opening the Mergetool (highlighted in fuschia)
+     - VSCode KitClient - Opening the Mergetool (highlighted in fuchsia)
    - Simplify the heading to "Opening the Mergetool".
 
 2. If time permits, monitor the "Round 2" tickets in the issue tracker. There are only 4 "Round 2" issues and thus there will need to be multiple students working on each.  The ticket can be manually assigned to each student that comments on it. If a student uses the the comment from Activity 1, the issue will not be assigned to them automatically if it has already been assigned to someone else.
