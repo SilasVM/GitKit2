@@ -40,6 +40,8 @@ The GitKit introduces students to the fundamental skills and concepts (including
 
 The GitKit breaks its introduction to collaborative software development into the 4 topics briefly described in the [GitKit Topics](#gitkit-topics) section just below. For each topic, the GitKit provides a set of classroom materials (Slides) and a set of hands-on exercises for the students (Activity). These materials are written with the assumption that the GitKit is the students' first formal introduction to FOSS and git / GitHub.  Nominally each topic can be presented in a 75 minute class period and the associate activity can be completed with 2-3 hours of homework or during a lab period. However, the GitKit is flexible and several successful adaptations are briefly described in the [Delivering the GitKit](#delivering-the-gitkit) section below.
 
+The activity documents below for Topics 1-4 contain some sections that are highlighted in green or fuchsia.  These sections give instructions for the two different development environments (i.e. _KitClients_) that can be used with the GitKit. You will need to edit the documents to retain the instructions for development environment that you choose to use.  See the [Development Environments](#the-development-environments) section for more information about the _KitClients_.
+
 ### GitKit Topics
 
 __Topic 1. Community and Collaboration:__ [[Slides](./materials/slides/1-S-CommunityAndCollaboration.pptx?raw=true) | [Activity](./materials/activities/1-A-CommunityAndCollaboration.docx?raw=true)]
@@ -220,9 +222,9 @@ This topic introduces students to Free and Open Source Software (FOSS), FOSS com
 
 2. Download the [Activity 1 document](./materials/activities/1-A-CommunityAndCollaboration.docx?raw=true) that will be distributed to students and edit it as follows:
    - Insert the URL of the `GitKit-FarmData2` upstream repo in place of the yellow highlighted text "Place URL of your deployed GitKit repository here!" that appears in the "Forking FarmData2" section.  If you are using multiple deployments, you may elect to distribute the different URL's to your students using an LMS or some other mechanism.
-   - Delete one of the highlighted sections depending upon the KitClient your students are using:
-     - Linux KitClient Setup (highlighted in green)
-     - VSCode KitClient Setup (highlighted in fuchsia)
+   - Retain the highlighted sections for the KitClient your students are using and remove those for the KitClient they are not using.
+     - Retain the green highlighted sections if you are using the Linux KitClient.
+     - Retain the fuchsia highlighted sections if you are using the VSCode KitClient.
 
 #### Topic 1 Activity Notes
 
@@ -300,7 +302,11 @@ This topic focuses on the upstreaming process.  Students learn about feature bra
 
 #### Topic 2 Instructor To-Do List
 
-1. Prior to this class period it is not required but may be a good idea to ensure that each student has claimed and been assigned a ticket in the issue tracker.  Some student may have tried to claim an issue but not been assigned it due to a race condition with other students, or they may not have used _exactly_ the right phrase in their comment.  In the latter case, the instructor might reply to the errant comment in the issue tracker and suggest that the student try again.
+1. Download the [Activity 2 document](./materials/activities/2-A-WorkingLocallyAndUpstreaming.docx?raw=true) that will be distributed to students and edit it as follows:
+   - Retain the highlighted sections for the KitClient your students are using and remove those for the KitClient they are not using.
+     - Retain the green highlighted sections if you are using the Linux KitClient.
+     - Retain the fuchsia highlighted sections if you are using the VSCode KitClient.
+2. Prior to this class period it is not required but may be a good idea to ensure that each student has claimed and been assigned a ticket in the issue tracker.  Some student may have tried to claim an issue but not been assigned it due to a race condition with other students, or they may not have used _exactly_ the right phrase in their comment.  In the latter case, the instructor might reply to the errant comment in the issue tracker and suggest that the student try again.
 
 #### Topic 2 Activity Notes
 
@@ -381,13 +387,18 @@ This set of materials may be a little short for a 75-minute period. The remainin
 
 #### Topic 3 Instructor To-Do List
 
-1. If time permits, review the students "Round 1 pull requests as they are submitted and comment on any PRs that are missing a description or a "Closes"/"Fixes" line.  Occasionally, a student will also make a PR for an issue that has not been assigned to them, commenting that they should request that the issue be assigned to them as described in Activity 1.
+1. Download the [Activity 3 document](./materials/activities/3-A-StayingSynchronized.docx?raw=true) that will be distributed to students and edit it as follows:
+   - Retain the highlighted sections for the KitClient your students are using and remove those for the KitClient they are not using.
+     - Retain the green highlighted sections if you are using the Linux KitClient.
+     - Retain the fuchsia highlighted sections if you are using the VSCode KitClient.
 
-2. Prior to this class review the "Round 1" pull requests. Identify some that are suitable as examples of maintainers merging PRs into the upstream (See: Slide 4 above.)
+2. If time permits, review the students "Round 1 pull requests as they are submitted and comment on any PRs that are missing a description or a "Closes"/"Fixes" line.  Occasionally, a student will also make a PR for an issue that has not been assigned to them, commenting that they should request that the issue be assigned to them as described in Activity 1.
 
-3. Demonstrate the activity of a project maintainer by merging a few of the student "Round 1" pull requests (See: Slide 4 above). Merging all of the PRs in a class with more than a few students becomes tedious and it is sufficient to do just a few live.  The remaining PRs can then be merged after introducing Topic 3.
+3. Prior to this class review the "Round 1" pull requests. Identify some that are suitable as examples of maintainers merging PRs into the upstream (See: Slide 4 above.)
 
-4. Follow up after introducing Topic 3 with any students who have not yet made a "Round 1" PR.
+4. Demonstrate the activity of a project maintainer by merging a few of the student "Round 1" pull requests (See: Slide 4 above). Merging all of the PRs in a class with more than a few students becomes tedious and it is sufficient to do just a few live.  The remaining PRs can then be merged after introducing Topic 3.
+
+5. Follow up after introducing Topic 3 with any students who have not yet made a "Round 1" PR.
 
 #### Topic 3 Activity Notes
 
@@ -477,10 +488,9 @@ Topic 4 then focuses on the resolution of merge conflicts.  The concepts of _mer
 #### Topic 4 Instructor To-Do List
 
 1. Download the [Activity 4 document](./materials/activities/4-A-MergeConflicts.docx?raw=true) that will be distributed to students and edit it as follows:
-   - Delete one of the highlighted sections depending upon the KitClient your students are using:
-     - Linux KitClient - Opening the Mergetool (highlighted in green)
-     - VSCode KitClient - Opening the Mergetool (highlighted in fuchsia)
-   - Simplify the heading to "Opening the Mergetool".
+   - Retain the highlighted sections for the KitClient your students are using and remove those for the KitClient they are not using.
+     - Retain the green highlighted sections if you are using the Linux KitClient.
+     - Retain the fuchsia highlighted sections if you are using the VSCode KitClient.
 
 2. If time permits, monitor the "Round 2" tickets in the issue tracker. There are only 4 "Round 2" issues and thus there will need to be multiple students working on each.  The ticket can be manually assigned to each student that comments on it. If a student uses the the comment from Activity 1, the issue will not be assigned to them automatically if it has already been assigned to someone else.
 
