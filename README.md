@@ -274,7 +274,9 @@ This topic focuses on the upstreaming process.  Students learn about feature bra
 
   Introduce branches, commits. In the diagrams on these slides, and throughout the remainder of the GitKit, different colors are used as the unique identifier for each commit (e.g. we can talk about the "red" or the "yellow" commit).
 
-  This slide introduce a conceptual simplification to think of a commit as a complete copy of all files in the project at that point in time.  While this is not the way that commits actually work, this simplification is easy to understand and is consistent with what students experience. When they switch to a branch they see all of the project files not just the changes in the last commit. It is worth a moment here to to explain that storing a complete copy of the files for each commit would be very inefficient and that it does not work that way in practice.  None the less, this seems to be a useful simplification that is sufficient in many circumstances.
+  This slide introduces a conceptual simplification to think of a commit as a complete "snapshot" of all files in the project repository at that point in time, along with some meta data. The simplification is that the commit does not actually contain full copies of every file in the repo. For each file that is changed by the commit, the "snapshot" contains a full (compressed) copy of the file. For each file that is not changed by the commit, the "snapshot" contains only a link (like a shortcut) to that file.  This link points to the file in the most recent commit in which it was changed.
+  
+  It is worth a moment here to to explain that storing a complete copy of the files for each commit would be very inefficient and that it does not work that way in practice.  This can also help to distinguish git from other _delta-based_ version control systems (cvs, svn) where commits record changes to files rather than complete copies of the changed files.
 
 - **Slide 5**
 
