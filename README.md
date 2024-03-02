@@ -44,19 +44,35 @@ The activity documents below for Topics 1-4 contain some sections that are highl
 
 ### GitKit Topics
 
-__Topic 1. Community and Collaboration:__ [[Slides](./materials/slides/1-S-CommunityAndCollaboration.pptx?raw=true) | [Activity](./materials/activities/1-A-CommunityAndCollaboration.docx?raw=true)]
+__Topic 1. Community and Collaboration:__ [
+  [Slides](./materials/slides/1-S-CommunityAndCollaboration.pptx?raw=true)
+| [Activity for Linux KitClient](./materials/activities-linux/1-A-CommunityAndCollaboration.docx?raw=true)
+| [Activity for VS Code KitClient](./materials/activities-vscode/1-A-CommunityAndCollaboration.docx?raw=true)
+]
    - Introduces Free and Open Source Software (FOSS) communities, and how they collaborate using version control (e.g. git) and repository hosting (e.g. GitHub).
    - Provides hands-on practice with the _issue tracker_, and _forking_ and _cloning_ of a repository.
 
-__Topic 2. Working Local & Upstreaming:__ [[Slides](./materials/slides/2-S-WorkingLocallyAndUpstreaming.pptx?raw=true) | [Activity](./materials/activities/2-A-WorkingLocallyAndUpstreaming.docx?raw=true)]
+__Topic 2. Working Local & Upstreaming:__ [
+  [Slides](./materials/slides/2-S-WorkingLocallyAndUpstreaming.pptx?raw=true)
+| [Activity for Linux KitClient](./materials/activities-linux/2-A-WorkingLocallyAndUpstreaming.docx?raw=true)
+| [Activity for VS Code KitClient](./materials/activities-vscode/2-A-WorkingLocallyAndUpstreaming.docx?raw=true)
+]
    - Introduces feature branches, commits, and pull requests as part of the forking workflow.
    - Provides practice with creating and switching _branches_, _staging_ and _committing_ changes, _pushing_ branches to origin and submitting _pull requests_.
 
-__Topic 3. Staying Synchronized:__ [[Slides](./materials/slides/3-S-StayingSynchronized.pptx?raw=true) | [Activity](./materials/activities/3-A-StayingSynchronized.docx?raw=true)]
+__Topic 3. Staying Synchronized:__ [
+  [Slides](./materials/slides/3-S-StayingSynchronized.pptx?raw=true)
+| [Activity for Linux KitClient](./materials/activities-linux/3-A-StayingSynchronized.docx?raw=true)
+| [Activity for VS Code KitClient](./materials/activities-vscode/3-A-StayingSynchronized.docx?raw=true)
+]
    - Introduces merges into the upstream that result in a developer's local clone becoming _out of synch_, and explains how to re-synchronize.
    - Provides practice with setting an _upstream remote_, _pulling_ (non-conflicting) changes from upstream, and _deleting_ feature branches. The exercises provide additional practice with the skills from topics 1 and 2 as well.
 
-__Topic 4. Merge Conflicts:__ [[Slides](./materials/slides/4-S-MergeConflicts.pptx?raw=true) | [Activity](./materials/activities/4-A-MergeConflicts.docx?raw=true)]
+__Topic 4. Merge Conflicts:__ [
+  [Slides](./materials/slides/4-S-MergeConflicts.pptx?raw=true)
+| [Activity for Linux KitClient](./materials/activities-linux/4-A-MergeConflicts.docx?raw=true)
+| [Activity for VS Code KitClient](./materials/activities-vscode/4-A-MergeConflicts.docx?raw=true)
+]
    - Introduces conflicting changes that lead to merge conflicts and how they can be resolved.
    - Includes practice with _merging_ main into a feature branch, raw _merge conflict_ representation, using a graphical _merge tool_ and updating a pull request.
 
@@ -220,11 +236,14 @@ This topic introduces students to Free and Open Source Software (FOSS), FOSS com
 
 1. [Deploy the GitKit](#deploying-the-gitkit) several days before it is needed to ensure that everything is in order.  Remember that each deploy will support up to 32 students. If more than 32 students need to be supported you will need to use multiple deploys.
 
-2. Download the [Activity 1 document](./materials/activities/1-A-CommunityAndCollaboration.docx?raw=true) that will be distributed to students and edit it as follows:
+2. Download the Activity 1 document for the KitClient you want your students to use:
+    - [Activity 1 for the **Linux KitClient**](./materials/activities-linux/1-A-CommunityAndCollaboration.docx?raw=true)
+    - [Activity 1 for the **VS Code KitClient**](./materials/activities-vscode/1-A-CommunityAndCollaboration.docx?raw=true)
+
+3. Edit the activity document as follows:
    - Insert the URL of the `GitKit-FarmData2` upstream repo in place of the yellow highlighted text "Place URL of your deployed GitKit repository here!" that appears in the "Forking FarmData2" section.  If you are using multiple deployments, you may elect to distribute the different URL's to your students using an LMS or some other mechanism.
-   - Retain the highlighted sections for the KitClient your students are using and remove those for the KitClient they are not using.
-     - Retain the green highlighted sections if you are using the Linux KitClient.
-     - Retain the fuchsia highlighted sections if you are using the VSCode KitClient.
+
+4. Distribute the modified document to your students.
 
 #### Topic 1 Activity Notes
 
@@ -275,7 +294,7 @@ This topic focuses on the upstreaming process.  Students learn about feature bra
   Introduce branches, commits. In the diagrams on these slides, and throughout the remainder of the GitKit, different colors are used as the unique identifier for each commit (e.g. we can talk about the "red" or the "yellow" commit).
 
   This slide introduces a conceptual simplification to think of a commit as a complete "snapshot" of all files in the project repository at that point in time, along with some meta data. The simplification is that the commit does not actually contain full copies of every file in the repo. For each file that is changed by the commit, the "snapshot" contains a full (compressed) copy of the file. For each file that is not changed by the commit, the "snapshot" contains only a link (like a shortcut) to that file.  This link points to the file in the most recent commit in which it was changed.
-  
+
   It is worth a moment here to to explain that storing a complete copy of the files for each commit would be very inefficient and that it does not work that way in practice.  This can also help to distinguish git from other _delta-based_ version control systems (cvs, svn) where commits record changes to files rather than complete copies of the changed files.
 
 - **Slide 5**
@@ -304,10 +323,9 @@ This topic focuses on the upstreaming process.  Students learn about feature bra
 
 #### Topic 2 Instructor To-Do List
 
-1. Download the [Activity 2 document](./materials/activities/2-A-WorkingLocallyAndUpstreaming.docx?raw=true) that will be distributed to students and edit it as follows:
-   - Retain the highlighted sections for the KitClient your students are using and remove those for the KitClient they are not using.
-     - Retain the green highlighted sections if you are using the Linux KitClient.
-     - Retain the fuchsia highlighted sections if you are using the VSCode KitClient.
+1. Download and distribute the Activity 2 document for the KitClient you want your students to use:
+    - [Activity 2 for the **VS Code KitClient**](./materials/activities-vscode/2-A-WorkingLocallyAndUpstreaming.docx?raw=true)
+    - [Activity 2 for the **Linux KitClient**](./materials/activities-linux/2-A-WorkingLocallyAndUpstreaming.docx?raw=true)
 2. Prior to this class period it is not required but may be a good idea to ensure that each student has claimed and been assigned a ticket in the issue tracker.  Some student may have tried to claim an issue but not been assigned it due to a race condition with other students, or they may not have used _exactly_ the right phrase in their comment.  In the latter case, the instructor might reply to the errant comment in the issue tracker and suggest that the student try again.
 
 #### Topic 2 Activity Notes
@@ -389,10 +407,9 @@ This set of materials may be a little short for a 75-minute period. The remainin
 
 #### Topic 3 Instructor To-Do List
 
-1. Download the [Activity 3 document](./materials/activities/3-A-StayingSynchronized.docx?raw=true) that will be distributed to students and edit it as follows:
-   - Retain the highlighted sections for the KitClient your students are using and remove those for the KitClient they are not using.
-     - Retain the green highlighted sections if you are using the Linux KitClient.
-     - Retain the fuchsia highlighted sections if you are using the VSCode KitClient.
+1. Download and distribute the Activity 3 document for the KitClient you want your students to use:
+    - [Activity 3 for the **VS Code KitClient**](./materials/activities-vscode/3-A-StayingSynchronized.docx?raw=true)
+    - [Activity 3 for the **Linux KitClient**](./materials/activities-linux/3-A-StayingSynchronized.docx?raw=true)
 
 2. If time permits, review the students "Round 1 pull requests as they are submitted and comment on any PRs that are missing a description or a "Closes"/"Fixes" line.  Occasionally, a student will also make a PR for an issue that has not been assigned to them, commenting that they should request that the issue be assigned to them as described in Activity 1.
 
@@ -489,10 +506,9 @@ Topic 4 then focuses on the resolution of merge conflicts.  The concepts of _mer
 
 #### Topic 4 Instructor To-Do List
 
-1. Download the [Activity 4 document](./materials/activities/4-A-MergeConflicts.docx?raw=true) that will be distributed to students and edit it as follows:
-   - Retain the highlighted sections for the KitClient your students are using and remove those for the KitClient they are not using.
-     - Retain the green highlighted sections if you are using the Linux KitClient.
-     - Retain the fuchsia highlighted sections if you are using the VSCode KitClient.
+1. Download and distribute the Activity 4 document for the KitClient you want your students to use:
+    - [Activity 4 for the **VS Code KitClient**](./materials/activities-vscode/4-A-MergeConflicts.docx?raw=true)
+    - [Activity 4 for the **Linux KitClient**](./materials/activities-linux/4-A-MergeConflicts.docx?raw=true)
 
 2. If time permits, monitor the "Round 2" tickets in the issue tracker. There are only 4 "Round 2" issues and thus there will need to be multiple students working on each.  The ticket can be manually assigned to each student that comments on it. If a student uses the the comment from Activity 1, the issue will not be assigned to them automatically if it has already been assigned to someone else.
 
