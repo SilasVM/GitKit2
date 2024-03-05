@@ -38,9 +38,9 @@ The GitKit introduces students to the fundamental skills and concepts (including
 
 ## GitKit Educational Materials
 
-The GitKit breaks its introduction to collaborative software development into the 4 topics briefly described in the [GitKit Topics](#gitkit-topics) section just below. For each topic, the GitKit provides a set of classroom materials (Slides) and a set of hands-on exercises for the students (Activity). These materials are written with the assumption that the GitKit is the students' first formal introduction to FOSS and git / GitHub.  Nominally each topic can be presented in a 75 minute class period and the associate activity can be completed with 2-3 hours of homework or during a lab period. However, the GitKit is flexible and several successful adaptations are briefly described in the [Delivering the GitKit](#delivering-the-gitkit) section below.
+The GitKit breaks its introduction to collaborative software development into the 4 topics briefly described in the [GitKit Topics](#gitkit-topics) section just below. For each topic, the GitKit provides a set of classroom materials (Slides) and a set of hands-on exercises for the students (Activity). These materials are written with the assumption that the GitKit is the students' first formal introduction to FOSS and git / GitHub.  Nominally each topic can be presented in a 75 minute class period and the associated activity can be completed with 2-3 hours of homework or during a lab period. However, the GitKit is flexible and several successful adaptations are briefly described in the [Delivering the GitKit](#delivering-the-gitkit) section below.
 
-The activity documents below for Topics 1-4 contain some sections that are highlighted in green or fuchsia.  These sections give instructions for the two different development environments (i.e. _KitClients_) that can be used with the GitKit. You will need to edit the documents to retain the instructions for development environment that you choose to use.  See the [Development Environments](#the-development-environments) section for more information about the _KitClients_.
+Two sets of activity documents are provided below for Topics 1-4 - one set for the _Linux KitClient_ and one set for the _VS Code KitClient_. See the [Development Environments](#the-development-environments) section for more information about the _KitClients_.
 
 ### GitKit Topics
 
@@ -248,7 +248,7 @@ This topic introduces students to Free and Open Source Software (FOSS), FOSS com
 #### Topic 1 Activity Notes
 
 The hands-on activity for topic 1 has students perform the following major tasks:
-  - Fork the fork the upstream `GitKit-FarmData2` repository into their own GitHub space.
+  - Fork the upstream `GitKit-FarmData2` repository into their own GitHub space.
   - Install one of the KitClients.
   - Clone their fork (i.e. their origin) of the `GitKit-FarmData2` repository.
   - Claim a Round1 issue in the issue tracker.
@@ -343,7 +343,7 @@ The following are notes on some of the specific questions in the topic 2 hands-o
 
 - **Question 2b**
 
-  The date of the most recent commit should be the date on which the GitKit was deployed. The third most recent commit should be authored by "Batese2001" and have the commit message "Summary Table Timing and No Log Messages (#289)."  If a student's answer doe not agree with this, then it is likely that they created their fork, after the presentation of the third Topic.  There is not necessarily a reason for concern for this activity, however this may create issues for future activities.  Each of those activities have instructions for resolving the issues and are noted below in Topic 3 and 4.
+  The date of the most recent commit should be the date on which the GitKit was deployed. The third most recent commit should be authored by "Batese2001" and have the commit message "Summary Table Timing and No Log Messages (#289)."  If a student's answer does not agree with this, then it is likely that they created their fork, after the presentation of the third Topic.  There is not necessarily a reason for concern for this activity, however this may create issues for future activities.  Each of those activities have instructions for resolving the issues and are noted below in Topic 3 and 4.
 
 - **Question 9a**
 
