@@ -2,6 +2,26 @@
 
 The GitKit introduces students to the fundamental skills and concepts (including git / GitHub) used in collaborative Free and Open Source Software (FOSS) development. It introduces students to the [forking workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow) and guides them through its use. The GitKit provides classroom materials, hands-on assignments, genuine project artifacts (repository, code, documentation, issues), and a development environment that support teaching these skills and concepts in the context of an authentic FOSS project.
 
+## Quick-start
+
+1. Deploy
+
+    [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/?autostart=true#https://github.com/hfossedu/gitkit-deployer-gitpod)
+
+2. Choose a KitClient and download its activities
+
+    * [Activities for Linux KitClient](./materials/activities-linux/)
+    * [Activities for VS Code KitClient](./materials/activities-vscode/)
+
+3. Insert upstream URL into topic 1 activity.
+4. Distribute slides and activities to students.
+5. Review and merge student PRs before topic 3.
+6. Merge `addRound2Conflicts` branch before topic 4.
+
+A more detailed guide follows.
+
+For help with GitKit, [chat with us on Discord](https://discord.gg/83Sb4csCeT).
+
 ## Outline
 
 - [GitKit Educational Materials](#gitkit-educational-materials) - Overview of the GitKit and its associated learning materials.
