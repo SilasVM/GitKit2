@@ -22,6 +22,12 @@ A more detailed guide follows.
 
 For help with GitKit, [chat with us on Discord](https://discord.gg/83Sb4csCeT).
 
+As part of our NSF-funded project, we are gathering information on the use of GitKit.
+If you are currently integrating GitKit into a course you are instructing,
+we kindly request your participation in this brief survey:
+
+    https://drexel.qualtrics.com/jfe/form/SV_81y8BL0zy3fBw22
+
 ## Outline
 
 - [GitKit Educational Materials](#gitkit-educational-materials) - Overview of the GitKit and its associated learning materials.
