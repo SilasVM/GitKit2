@@ -2,6 +2,10 @@
 
 The GitKit introduces students to the fundamental skills and concepts (including git / GitHub) used in collaborative Free and Open Source Software (FOSS) development. It introduces students to the [forking workflow](https://www.atlassian.com/git/tutorials/comparing-workflows/forking-workflow) and guides them through its use. The GitKit provides classroom materials, hands-on assignments, genuine project artifacts (repository, code, documentation, issues), and a development environment that support teaching these skills and concepts in the context of an authentic FOSS project.
 
+## Contact us
+
+For help, [join our Discord server](https://discord.gg/83Sb4csCeT).
+
 ## Quick-start
 
 1. Deploy
@@ -20,7 +24,6 @@ The GitKit introduces students to the fundamental skills and concepts (including
 
 A more detailed guide follows.
 
-For help with GitKit, [chat with us on Discord](https://discord.gg/83Sb4csCeT).
 
 As part of our NSF-funded project, we are gathering information on the use of GitKit.
 If you are currently integrating GitKit into a course you are instructing,
