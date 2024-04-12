@@ -8,6 +8,9 @@ The GitKit introduces students to the fundamental skills and concepts (including
 
     [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/?autostart=true#https://github.com/hfossedu/gitkit-deployer-gitpod)
 
+2. [Configure the Upstream Repository](#configure-the-upstream-repository) to
+    enable automated community interactions.
+
 2. Choose a KitClient and download its activities
 
     * [Activities for Linux KitClient](./materials/activities-linux/)
