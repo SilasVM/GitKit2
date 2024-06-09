@@ -168,27 +168,10 @@ To deploy GitKit, you'll need accounts on the following services:
 
 Click the "Open in GitPod" link below to run the deployer.
 It will gather some information from you and then create the upstream
-repository on GitHub.
+repository on GitHub. It will also deploy and enable all community 
+automations used by the upstream repository.
 
 [![Open in Gitpod](https://gitpod.io/button/open-in-gitpod.svg)](https://gitpod.io/?autostart=true#https://github.com/hfossedu/gitkit-deployer-gitpod)
-
-### Configure the Upstream Repository
-
-To enable the community automations, you need to ensure that "Workflow permissions"
-for the new repository grant the `GITHUB_TOKEN` the "Read and write permissions".
-
-Where you set these permissions depends on whether you deployed into your personal namespace or an organization.
-
-* If you deployed to an **organization**, navigate to that organization page
-  on GitHub.
-* If you deployed into your **personal namespace**, navigate to the new repository
-  on GitHub.
-
-Now that you are on the correct page, do the following.
-
-1. Open the "Settings" (the "gear" icon top right)
-2. Select "Actions" -> "General" in the left-hand menu.
-3. Click "Read and write permissions" in the "Workflow Permissions" section.
 
 ## Instructor Notes
 
